@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 9: Flash, Video, &amp; Audio</title>
+</head>
+<body>
+  <h3>Chapter 9: Flash, Vidoe, and &amp; Audio</h3>
+    Flash is popular technology used to add animations, video, and audio to websites. This chapter will focus on how to add cideo and audio to your site using either the new HTML5 <b>video</b> and <b>audio</b> elements or to a hosted site like YouTube and SoundCloud. We will learn:
+    <ul>
+      <li>
+        How to use Flash in web pages
+      </li>
+      <li>
+        How to use HTML5 <b>video</b> and <b>audio</b> elements
+      </li>
+      <li>
+        When to host your own video and audio and when to use a service such as YouTube
+      </li>
+    </ul>
+  <hr />
+  <h3>How Flash Works</h3>
+    <p>
+      Whether you're creating an animation or a media player in Flash, the files you put on your website are refferred to as <b>Flash movies</b>.
+    </p>
+    <p>
+      If you want to create a Flash movie, you'll need to purchase the Flash authoring environment from Adobe.
+    </p>
+    <p>
+      There are several companies that offer Flash animations and slideshows, as well as video and audio players that you can use without purchasing this tool.
+    </p>
+    <p>
+      When you create a Flash file in the Flash authoring environment, it is saved with the <b>.fla</b> file extension. In order to use this file on a web page it has to be saved in a different format known as SWF. (It has the <b>.swf</b> file extension.)
+    </p>
+    <p>
+      When you export the movie into SWF format, Flash creates code that you can use to embed the Flash movie in your page, Traditionally this code used the HTML <b>object</b> and <b>embed</b> tags. Now it is more common to use JavaScript.
+    </p>
+    <p>
+      To view Flash, browsers need to use a plugin (an extra piece of software that runs in the browser) called a Flash Player. Statistics commonly indicate that 98% of browsers on desktop computers have the Flash plugin installed. (The percentage of mobiles and tablets with it is much less.)
+    </p>
+    <p>
+      This chapter will only show how to add Flash movies to you website, There are volumes of books devoted to how to create Flash movies.
+    </p>
+  <hr />
+  <h3>Use Of Flash</h3>
+    <p>
+      When Flash was first released it was developed to create animations. The technology quickly evolved and people started to use it to build media players and even entire websites.
+    </p>
+    <p>
+      Although FLASH is still very popular, in recent years people have been more selective of when they use it (and now rarely conside building an entire website in Flash.)
+    </p>
+    <p>
+      Despite this, Flash does have a future on the web because there are some things it does very well, such as creating animations.
+    </p>
+    <p>
+      There are several reasons why fewer websites are using Flash these days, including:
+      <ul>
+        <li>
+          In 2005-6, a set of JavaScript libraries were launched (including Prototype, scipt.aculo.us, and JQuery) which made it easier for people to create animated effects using JavaScript.
+        </li>
+        <li>
+          When Apple launched the iPhone in 2007 and later theiPad in 2010, they took the descision not to support Flash.
+        </li>
+        <li>
+          There have been laws introduced to ensure that websites are usable by those with visual or physical impairments - and Flash has been criticized because Flash content does not always meet accessibilty requirements
+        </li>
+        <li>
+          In 2008 browsers started to support HTML5 <b>video</b> and <b>audio</b> tags. Flash is still a popular way of playing video and audio on the web but more and more people are switching to HTML5.
+        </li>
+      </ul>
+    </p>
+  <hr />
+  <h3>Adding A Flash Movie To Your Web Page</h3>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Adding a Flash Movie</title>
+        <script type="text/javascript"
+          src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+          <script type="text/javascript">swfobject.embedSWF("flash/bird.swf","bird", "400", "300", "8.0.0");</script>
+      </head>
+      <body>
+        <div id="bird">
+        </div>
+        <p>
+          An animation of a bird taking a shower. I cannot play this Flash file, so this paragraph was taken from inside the div.
+        </p>
+      </body>
+    </html>
+    <p>
+      The most popular way of adding Flash into a web page is using JavaScript. There are several scripts that allow you to do this without an in-depth understanding of the JavaScript language.
+    </p>
+    <p>
+      The script we will be looking at here is called <b>SWFObject</b>. You can obtain a copy of it for free from Google, and you can see how we use it in the notes below.
+    </p>
+    <p>
+      One advantage to using this <b>technique</b> is that it allows browsers to show alternative content for users whose browsers are not capable of showing Flash.
+    </p>
+    <p>
+      This technique uses a <b>div element</b> to create a space where the Flash movie should sit. The <b>div</b> element has an <b>id</b> attribute whose <b>value</b> is <b>used</b> by the <b>SWFObject</b> script. In this example, the value of the <b>id</b> attribute is <b>bird</b>.
+    </p>
+    <p>
+      Inside the <b>div</b> element you can place the alternative content for users who are not able to play Flash.
+    </p>
+    <p>
+      The SWFObject script will check to see if the user's browser can play the Flash movie. If it can, the script will replace the content of the <b>div</b> with the <b>.swf</b> file.
+    </p>
+    <p>
+      For users who cannot see the Flash movie, you could show a still from the movie instead. You might also like to consider using a text description of the Flash file.
+    </p>
+    <p>
+      If you use a text description as alternative content, then you can achieve two further benefits:
+      <ol>
+        <li>
+          The text can be accessed by those with visual and/or physical impairments who are not able to interact with the Flash file.
+        </li>
+        <li>
+          The text can be indexed by search engines (which are not as effective a indexing SWF files), increasing the chance that your content will be found.
+        </li>
+      </ol>
+    </p>
+    <p>
+      In this example, the SWFObject script is hosted on Google's servers. We <b>include</b> the script in this web page using the <b>first</b> of the two <b>script</b> elements.
+    </p>
+    <p>
+      The <b>type</b> attribute is used on the <b>script</b> element to indicate that the script is written in JavaScript. The <b>src</b> attribute tells the browser where to find the script.
+    </p>
+    <p>
+      The <b>second script</b> element is used to tell the browser about the Flash movie, as well as which element it should replace. This element is actually telling the SWFObject script five pieces of information, which are in the brackets:
+        <ol>
+          <li>
+            The location of the <b>.swf file: flash/bird.swf</b>
+          </li>
+          <li>
+            The element that the Flash movie should <b>replace</b>, specified by the value of the <b>id</b> attribute on the <b>div</b> element: <b>bird</b>
+          </li>
+          <li>
+            The <b>width</b> of the Flash movie: <b>400 px</b>
+          </li>
+          <li>
+            The <b>height</b> of the Flash movie: <b>300 px</b>
+          </li>
+          <li>
+            The minimum <b>version</b> of the Flash player needed to view the movie: <b>Flash Player 8</b>
+          </li>
+        </ol>
+    </p>
+    <hr />
+    <h3>Understanding Video Formats and Players</h3>
+      <p>
+        To add video to your site you must understand two issues: <b>file format</b> and <b>video players/plugins.</b>
+      </p>
+      <h4>Formats</h4>
+      <p>
+        Home movies are available in many different formats (BluRay, DVD, VHS,etc.), online, there are even <b>more</b> video formats. Just as a DVD player cannot play a VHS cassette, browsers <b>differ</b> in what video formats they do and do not support.
+      </p>
+      <p>
+        In order for user to view your video online, you may need to <b>convert</b> it to another format. The process of converting a video into another format is sometimes reffered to as <b>"encoding"</b> the video. There are several apps available on the web that enable you to encode videos, <a href="www.mirovideoconverter.com">such as this one</a>.
+      </p>
+      <h4>Players / Plugins</h4>
+      <p>
+        Browsers were initially designed to show text and images only. For this reason, browsers built prior to 2010 generally <b>required</b> another program called a player or plugin to be installed in order to lay video content. These players and plugins <b>only</b> supported certain video formats.
+      </p>
+      <p>
+        Recently browsers have evolved to support the HTML5 <b>video</b> tag (which renders players and plugins obsolete). Unfortunately, you can't rely on every visitor to your website having a recent browser that supports this new HTML5 element and the browsers that do recognize the <b>video</b> element require the video to be encoded in different formats.
+      </p>
+      <h4>Approach</h4>
+      <p>
+        The easiest way to add video to your web site is to use a hosted service such as YouTube or Vimeo.
+      </p>
+      <p>
+        There are some cases where using these services is <b>not</b> appropiate (see below) and you will want to host the video on your own site.
+        At the time of writing, to ensure most people can play your video content, it is considered best practice to use the HTML5 <b>video</b> element for browsers that support it, and also Flash video for those that do not. This means you would need to upload any videos you want to show in at least two different formats: <b>WebM</b> and <b>MP4</b>.
+      </p>
+    <hr />
+    <h3>Using Hosted Video Services</h3>
+      <p>
+        The easest way to add a video to your site is to upload the video to a site like YouTube or Vimeo and use the features provided on their site to embed the video in your page.
+      </p>
+      <h4>Advantages</h4>
+      <p>
+        Hosted video sites (YouTube) provide players that work with the majority of web browsers. You don't nned to worry about encoding your video since these sites allow you to unload your content in a range of formats. Once uploaded, they automatically convert your video into the various formats required by different browsers.
+      </p>
+      <p>
+        Web hosting companies often charge extra if you use a lot of bandwidth, and video files can be quite large. Therefore, it can cost you extra to host the videos on your own site. If your video is hosted on a site liek YouTube or Vimeo, you do not need to pay for bandwith.
+      </p>
+      <h4>Disadvantages</h4>
+      <p>
+        Your video will be available on the site of the hosted service, so if you want the content to be exculsively avaiable on your site (and not visible on other sites), you need to host the video on your own server and ass your own player into the page.
+      </p>
+      <p>
+        Some services will limit what your video is allowed to include. For example, most prohibit the use of advertising within the video you upload (which prevents you from monetizing that content).
+      </p>
+      <p>
+        Some hosting services will play their own adverts before your video will begin, or even overlay them over the screen as your video is playing. The quality of the video on some hosting services can also be limited.
+      </p>
+      <h4>The Alternative</h4>
+      <p>
+        If you want to host video on your own site - rather than a hosted service - a lot more work is involved in setting up your site to play the video.
+      </p>
+      <p>
+        We will be looking at two different ways that you can host your own videos: using both Flash Video and the HTML5 <b>video</b> element.
+      </p>
+      <p>
+        In order to ensure that the maximum number of visitors to your site can see the video, you will need to use a combination of both of these techniques.
+      </p>
+    <hr />
+    <h3>Preparing A Flash Video For Your Site</h3>
+      <p>
+        These are the three steps needed to add a Flash Video to your web page:
+        <ol>
+          <li>
+            <h4>Convert Your Video Into FLV Format</h4>
+            <p>
+              To play a Flash Video, you need to convert your video into FLV format. Since Flash 6, the Flash authoring environment has come with a Flash Video Encoder to convert videos into FLV format.
+            </p>
+            <p>
+              Some Flash video players also support a format called H264 (and somevideo editing programs export video in this format).
+            </p>
+            <p>
+              Googling "FLV or H264 converters" will allow you to find alternative encoding software.
+            </p>
+          </li>
+          <li>
+            <h4>Find A FLV Player To Play The Video</h4>
+            <p>
+              You'll need a <b>player</b> written in Flash to play the FLV file. Its purpose is to hold the FLV movie and add controls such as play/pause. Here are two sites that offer FLV players:</p>
+              <ul>
+                <li>
+                  www.osflv.com
+                </li>
+                <li>
+                  www.longtailvideo.com
+                </li>
+              </ul>
+            <p>
+              You don't need the Flash authoring environment to use either of these on your website.
+            </p>
+          </li>
+          <li>
+            <h4>Include The Player &amp; Video In Your Page</h4>
+            <p>
+              You can include the player in your page using a JavaScript technique such as SWFObject, which is mentioned above.
+            </p>
+            <p>
+              You will also need to tell the player where it can find the videofile that you want it to play. (Some players have advanced features such as the ability to create playlists of multiple videos, or add a still picture before the video plays.)
+            </p>
+          </li>
+        </ol>
+      </p>
+    <hr />
+    <h3>Adding A Flash Video To Your Pages</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Adding a Flash Video</title>
+          <script type="text/javascript"
+          src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js">
+          </script>
+          <script type="text/javascript">
+            var flashvars = {}
+            var params = {movie:"../video/puppy.flv"};
+            swfobject.embedSWF("flash/osplayer.swf", "snow", "400", "320", "8.0.0", "flashvars", "params");
+          </script>
+        </head>
+        <body>
+          <div id="snow">
+          </div>
+          <p>
+            A video of a puppy playing in the snow. I cannot play Flash so this paragraph was taken from inside the div.
+          </p>
+        </body>
+      </html>
+        <p>
+          This example uses the OS FLV player to diaplay a vidoe called <b>puppy.flv</b>, which has already been converted into FLV format.
+        </p>
+        <p>
+          You have already seen how to use SWFObject to embed a basic animation in a page, but sometimes Flas movies need information in order for them to work. In this example, the path to the video player needs to know the path to the video it has to play, so SFWObject uses JavaScript variables to pass this information to the Flash movie. These are provided in th two lines of code that start with <b>var</b>.
+        </p>
+        <p>
+          This particular player is not expecting any information in the <b>flashvars</b> variable, so that is left empty.
+        </p>
+        <p>
+          The path to the movie is supplied in the variable called <b>params:</b><br />
+          var params= {movie:"../videos/puppy.flv"};
+        </p>
+        <p>
+          The line after the variables is the one that tells the script to replace the HTML element with the video player. It is very similar to the one you saw in the earlier example that introduced SWFObject.
+        </p>
+        <p>
+          Diffrerent video players require information such as the path to the video in slightly different formats, usually they will come with examples and documentation to help you understand how to use them
+        </p>
+    <hr />
+    <h3>HTML5: Preparing Video For Your Pages</h3>
+      <p>
+        Despite the HTML5 <b>video</b> element being a recent addition, its use is widespread. Here are some key issues to be aware of (as of printing of this book):
+        <h4>Support</h4>
+          The new HTML5 <b>video</b> tag is only supported by recent browsers, so you can't just use this one technique if you want everyone to be able to see your video (you need to combine this HTML5 with Flash Video).
+        <h4>Digital Rights</h4>
+          At the time of writing, the <b>video</b> element does not support any type of Digital Rights Management (DRM - sometimes referred to as copy protection). But a dedicated pirate will usually find a way around DRM
+        <h4>Formats</h4>
+          <p>
+            Not all browsers support the same video formats. Therefore, you need to supply your video in more than one format.
+          </p>
+          <p>
+            To reach as many browsers as possible, you should provide the video in the following formats:
+            <ul>
+              <li>
+                <b>H264:</b> IE (Internet Explorer) and Safari
+              </li>
+              <li>
+                <b>WebM:</b> Android, Chrome, Firefox, Opera
+              </li>
+            </ul>
+          </p>
+          <p>
+            Chorme, Firefox, and Opera have indicated that they will support a format called WebM. (Some Flash players also support H264, and WebM - which will save on the number of conversions).
+          </p>
+        <h4>Controls</h4>
+          The Browser supplies its own controls for the player, and these can vary from browser to browser. You can control the appearance of these controls using JavaScript (but that is beyond the scope of this book).
+        <h4>In The Browser</h4>
+          One of the problems with players such as the Flash Player is that they can behave inconsistently when elements such as <b>menus</b> drop over them, or the window is scalled up or down, The HTML5 option solves these issues.
+      </p>
+    <hr />
+    <h3>HTML5: Adding Video To Your Pages</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Adding HTML5 Video</title>
+        </head>
+        <body>
+          <video src="/Users/Kenzo/Documents/HTML:CSS Book/HTML5 Video/video:puppy.mp4"
+          poster="/Users/Kenzo/Documents/HTML:CSS Book/Images/kangaroofight.jpg"
+          width="400"
+          height="300"
+          preload
+          controls
+          loop>
+          <p>
+            A video of a puppy playing in the snow
+          </p>
+        </video>
+        </body>
+      </html>
+      <p>
+        In HTML5 you <b>do not</b> need to supply values for all the attributes, such as the controls, autoplay, and loop attributes used with the <b>video</b> element. These attributes are like on/off switches. If the attribute is <b>present</b>, it turns that option <b>on</b>. If the attribute is <b>omitted</b>, the option is <b>off</b>.
+      </p>
+      <p>
+        If the browser <b>does not</b> support the <b>video</b> element or the format of the video used, it will display whatever isbetween the opening and closing <b>video</b> tags.
+      </p>
+      <h4 id="preload">preload</h4>
+        This attribute tells the browser what to do when a page loads. It can have one of three values:
+          <ul>
+            <li>
+              <h5>none</h5>
+              <p>
+                The browser should not load the video until the user presses play.
+              </p>
+            </li>
+            <li>
+              <h5>auto</h5>
+              <p>
+                The browser should download the video when the page loads.
+              </p>
+            </li>
+            <li>
+              <h5>metadata</h5>
+              <p>
+                The browser should just collect information such as size, first frame, track list,and duration.
+              </p>
+            </li>
+          </ul>
+          <br />
+      <p>
+        The <b>video</b> element has a number of attributes which allow you to control video playback:
+        <h4>src</h4>
+        This attribute specifies the path to the video. (The example video is in H264 format so it will only work in IE and Safari).
+        <h4>poster</h4>
+        This attribute allows you to specify an image to show while the video is downloading or until the user tells the video to play.
+        <h4>width, height</h4>
+        These attributes specify the size of the player in pixels.
+        <h4>controls</h4>
+        When used, this attribute indicates that the browser should supply it own controls for playback.
+        <h4>autoplay</h4>
+        When used, this attribute specifies that the file should play automatically.
+        <h4>loop</h4>
+        When used, this attribute indicates that the video should start playing again once it has ended.
+      </p>
+    <hr />
+    <h3>HTML5: Multiple Video Sources</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Multiple Video Sources</title>
+        </head>
+        <body>
+          <video poster="/Users/Kenzo/Documents/HTML:CSS Book/Images/kangaroofight.jpg" width="400" height="320" preload controls loop>
+            <source src="/Users/Kenzo/Documents/HTML:CSS Book/HTML5 Video/video:puppy.mp4" type="video/mp4" /><!--added double quote to type, removed codecs portion of code, see HTML Questions for original-->
+            <source src="/Users/Kenzo/Documents/HTML:CSS Book/HTML5 Video/video:puppy.webm" type="video/webm" /><!--added double quote to type, removed codecs portion of code, see HTML Questions for original-->
+          <p>
+            A video of a puppy playing in the snow.
+          </p>
+          </video>
+        </body>
+      </html>
+    <p>
+      To specify the location of the file to be played, you can use the <b>source</b> element inside the <b>video</b> element. (This should <b>replace</b> the <b>src</b> attribute on the opening <b>video</b> tag.)
+    </p>
+    <p>
+      You can use <b>multiple source elements</b> to specify that the video is available in different formats.
+    </p>
+    <p>(Due to a bug on the iPad, you should provide the MP4 video as the <b>first format</b>. Otherwise, it might not play.)</p>
+    <h4>src</h4>
+      <p>
+        Thsi attribute specifies the path to the video.
+      </p>
+    <h4>type</h4>
+      <p>
+        You should use this attribute to tell the browser what format the video is in. Otherwise, it will download some of the video to see of it can play the file (which will take time and bandwidth).
+      </p>
+    <h4>codecs</h4>
+      <p>
+        The <b>codec</b> that was used to encode the video is supplied within the type attribute. Note the use of <b>single</b> quotes, as well as double quotes in the type attribute, when it is supplied.
+      </p>
+      <p>
+        If the browser doesn't support the <b>video</b> element or the format if the video used, it will display whatever in between the opening and closing <b>video</b> tags.
+      </p>
+    <hr />
+    <h3>HTML5: Combining Flash &amp; HTML5 Video</h3>
+      <p>
+        By offering videos in both HTML5 and Flash formats, you will ensure that it can be viewed by the majority of users on your site.
+      </p>
+      <p>
+        You may choose th offer HTML5 as the first option, and Flash video as a fallback for people whose browser doesn't support HTML5 video. Or work the other way around.
+      </p>
+      <p>
+        Because some of the video players built in Flash support H264 encoding, if you use a player that supports this format you would only need to provide the video in H264 and WebM formats. (You will not needit in FLV format as well.) This will be demonstrated in the example at the end of the chapter.
+      </p>
+      <p>
+        If you start to work with HTML5 video in depth, you can also:
+        <ul>
+          <li>
+            Create your own playback controls
+          </li>
+          <li>
+            Provide different versions for browsers that have different sized screens (so you can provide lower resolution content for handheld devices)
+          </li>
+          <li>
+            Tell different parts of a page to change when the video reaches a certain point.
+          </li>
+        </ul>
+      </p>
+    <hr />
+    <h3>Adding Audio To Web Pages</h3>
+      <p>
+        By far the most popular format for putting audio on web pages is <b>MP3</b>. As with video, there are three routes commonly taken:
+        <h4>Use A hosted service</h4>
+        <p>
+          There are several sites that allow you to upload your audio, and provide a player which you can embed in your page, such as SoundCloud.com and Myspace.com
+        </p>
+        <h4>Use Flash</h4>
+        <p>
+          There are several Flash movies that allow you to play MP3 files; from simple buttons that play one track to complex players that allow you to create playlists and juke boxes.
+        </p>
+        <h4>Use HTML5</h4>
+        <p>
+          HTML5 has introduced a new <b>audio</b> element. Browsers that support this element provide their own controls - much as they do for video files like we just covered.
+        </p>
+      </p>
+    <hr />
+    <h3>Adding A Flash MP3 Player</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Adding a Flash MP3 Player</title> <!--why are escape char. needed below -->
+          <script type="text/javascript"
+            src="/Users/Kenzo/Documents/HTML:CSS Book/Audio : Music/07 Politicians In My Eyes.m4a"> </script><!--depreciated?-->
+          <script type="text/javascript">
+            var flashvars = {};
+            var params = {mp3: "audio/test.mp3"};
+            swfobject.emebdSWF(
+              "flash/player_mp3_1.0.0.swf",
+              "music-player", "200", "20", "8.0.0",
+              flsahvars, params);</script>
+        </head>
+        <body>
+          <div id="music-player">
+            <p>
+              You cannot hear this track because this browser does not support our Flash music player. (This would be displayed if the browser does not support Flash player.)
+            </p>
+          </div>
+        </body>
+      </html><br />
+      <p>
+        There are many MP3 players that have already been written in Flash, such as:
+        <ul>
+          <li>
+            flash-mp3-player.net
+          </li>
+          <li>
+            musicplayer.sourceforge.net
+          </li>
+          <li>
+            www.wimpyplayer.com
+          </li>
+        </ul>
+      </p>
+      <p>
+        Each of these players has different functionality, so check their features before choosing one for your site. This exmaple uses a free player from flash-mp3-player.net which is embedded in the page using the SWFObject technique covered earlier. The player is told the path to the MP3 file using a parameter called <b>mp3</b>.
+      </p>
+      <p>After the second <b>script</b> tag, you can see that we created two JavaScript variables; the first called <b>flashvars</b>, the second called <b>params</b>. Even though we are not using the <b>flashvars</b> variable, the SWFObject script expects it before the <b>params</b> variable so we need it there.
+      </p>
+      <xmp>
+        var flashvars = { };
+        var params = {
+          mp3: "music/test-audio.mp3"
+        };
+      </xmp>
+      <p>
+        These variables are then added at the end of the line that embeds the MP3 player in the page (just before the second closing <b>script</b> tag).
+      </p>
+    <hr />
+    <h3>HTML5: Adding HTML5 Audio To Your Pages</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Adding HTML5 To Your Pages</title>
+        </head>
+        <body>
+          <audio src="/Users/Kenzo/Documents/HTML:CSS Book/Audio : Music/07 Politicians In My Eyes.m4a" controls autoplay>
+            <p>
+              This browser does not support our audio format.
+            </p>
+          </audio>
+        </body>
+      </html><br />
+      <p>
+        HTML5 introduced the <b>audio</b> element to include audio files in your pages. As with HTML5 video, browsers expect different formats for the audio.
+      </p>
+      <p>
+        The <b>audio</b> element has a number of attributes which allow you to control audio playback:
+          <ul>
+            <li>
+              <h4>src</h4>
+              <p>
+                This attribute specifies the path to the audio file.
+              </p>
+            </li>
+            <li>
+              <h4>controls</h4>
+              <p>
+                This attribute indicates whether or not the player should display controls. If you do not use this attribute, no controls will be shown by default. You can also specify your own controls using JavaScript.
+              </p>
+            </li>
+            <li>
+              <h4>autoplay</h4>
+              <p>
+                The presence of this attribute indicates that the audio should start playing automatically. (It is considered better practice to let visitors choose to play audio.)
+              </p>
+            </li>
+            <li>
+              <h4>preload</h4>
+              <p>
+                The presence of this attribute indicates what the browser should do if the player is not set to <b>autoplay</b>. It can have the same values (none, auto, metadata) we saw for the video element <a href="#preload">above</a>.
+              </p>
+            </li>
+            <li>
+              <h4>loop</h4>
+              <p>
+                This attribute specifies that the audio track should play again once it is finished.
+              </p>
+            </li>
+          </ul>
+      </p>
+      <p>
+        This example <b>only</b> works in browsers that support the OGG Vorbis audio format (Firefox, Chrome, and Opera). For it to work in Safari 5 and IE 9, the audio would need to be in MP3 format (or use the <b>source</b> element covered in the next topic below to offer different formats.)
+      </p>
+      <hr />
+      <h3>HTML5: Multiple Audio Sources</h3>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Multiple Audio Sources</title>
+          </head>
+          <body>
+            <audio controls autoplay>
+              <source src="/Users/Kenzo/Documents/HTML:CSS Book/Audio : Music/1-01 Huarache Lights.ogg" />
+              <source src="/Users/Kenzo/Documents/HTML:CSS Book/Audio : Music/1-01 Huarache Lights.m4a" />
+              <p>
+                This browser does not supoort our audio format.
+              </p>
+            </audio>
+          </body>
+        </html>
+      <p>
+        It is possible to specify more than one audio file using the <b>source</b> element between the opening and closing <b>audio</b> tags (instead of the src attribute on the opening <b>audio</b> tag, as done in the lesson above.)
+      </p>
+      <p>
+        This is important, because different browsers support different formats for audio files.
+      </p>
+      <p>
+        <b>MP3:</b> Safari 5+, Chrome 6+, IE 9+
+      </p>
+      <p>
+        <b>Ogg Vorbis:</b> Firefox3.6, Chrome 6, Opera 1.5
+      </p>
+      <p>
+        So you would need to supply two audio formats to get coverage across all recent browsers that support the <b>audio</b> element. You could also provide a Flash alternative for older browsers that do not support the <b>audio</b> element.
+      </p>
+      <p>
+        The HTML5 <b>audio</b> tag has not gained such widespread adoption as the <b>video</b> tag, and there have been some issues with audio quality in the first browsers to implement it.
+      </p>
+      <p>
+        <h4>src</h4>
+        <p>
+          The <b>source element</b> uses the <b>src attribute</b> to indicate where the file is located.
+        </p>
+        <h4>type</h4>
+        <p>
+          At the time of writing, the <b>type attribute</b> was not commonly being used on the <b>source element</b> in the same way it was for the <b>video</b> element.
+        </p>
+      </p>
+        <hr />
+        <h3>Example: Flash, Video, &amp; Audio</h3>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>Flash, Video, and Audio</title>
+            <script type="text/javascript"
+              src="http://ajax.googleapis/ajax/libs/swfobject/2.2/swfobject.js">
+            </script>
+            <script type="text/javascript">
+              var flashvars = {};
+              var params = {movie:"../video/puppy.flv"};
+              swfobject.embedSWF("flash/osplayer.swf", "snow", "400", "320", "8.0.0", flashvars, params);</script>
+          </head>
+          <body>
+            <video poster="Images/gorilla_fight.jpg" width="400" height="320" controls="controls">
+              <source src="HTML5 Video/video:puppy.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"" />
+              <source src="HTML5 Video/video:puppy.webm" type="video/webm; codecs="vp8, vorbis"" />
+              <div id="snowdog">
+                <p>
+                  You cannot see this video of a puppy playing in the snow because this browser does not support our video formats.
+                </p>
+              </div>
+            </video>
+          </body>
+        </html>
+</body>
+</html>

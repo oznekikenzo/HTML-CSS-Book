@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chapter 8: Extra Markup</title>
+  </head>
+  <body>
+    <h3>Chapter 8: Extra Markup</h3>
+    This chapter will focus on helpful topics that are not easily grouped together. We will cover:
+      <ul>
+        <li>
+          Diffrent versions of HTML and how to indicate which version you are using
+        </li>
+        <li>
+          How to add comments to your code
+        </li>
+        <li>
+          Global attributes, which are attributes that can be used on any element, including the <b>class</b> and <b>id</b> attributes.
+        </li>
+        <li>
+          Elements that are used to group together parts of the page where no other element is suitable.
+        </li>
+        <li>
+          How to embed a page within a page using iframes.
+        </li>
+        <li>
+          How to add information about the web page using the <b>meta</b> element
+        </li>
+        <li>
+          Adding characters such as angled brackets and copyright symbols
+        </li>
+      </ul>
+<hr />
+      <h3>The Evolution of HTML</h3>
+        <p>
+          There have been several versions of HTML since it's creation. Each version improves on the past, with new elements and older code removed.
+        </p>
+        <p>
+          Not all web users have the lastest version of their browser installed, which means not everyone will be able to view all of the latest features and markup.
+        </p>
+        <h5>HTML 4</h5>
+        <p>
+          Released in 1997, with the exception of a few elements added in HTML5, the elements you have seen in this book were all available in HTML 4.
+        </p>
+        <p>
+          HTML 4 had some presentational elements to control the appearance of pages, authors are not recommended to use them anymore. (Elements like <b>center</b> for centering content on a page, <b>font</b> for controling the appearance of text, and <b>strike</b> to put a line through the text - all of this can and <b>SHOULD</b> be done in CSS.)
+        </p>
+        <h5>XHTML 1.0</h5>
+        <p>
+          Released in 2000, in 1998 a language called XML was published to allow people to write new markup languages. Since HTML was the most widely used markup language around, it was deceided that HTML 4 should be reformulated to follow the rules of XML and it was renamed XHTML. This meant that authors had to follow more strict rules about writing markup. For example:
+            <ul>
+              <li>
+                Every element needed a closing tag (except for empty elements like <b>img</b>).
+              </li>
+              <li>
+                Attribute names had to be in lowercase.
+              </li>
+              <li>
+                All attributes required a value, and all values were to be placed in double quotes.
+              </li>
+              <li>
+                Depreciated elements should no longer be used.
+              </li>
+              <li>
+                Every element that was opened inside another element should be closed inside that same element.
+              </li>
+            </ul>
+        </p>
+        <p>
+          The examples in this book follow these strict rules. A key benefit of this change was thaat XHTML works seamlessly with other programs that are written to create and procress XML documents.
+        </p>
+        <p>
+          It could also be used with other data formats such as Scalable Vector Graphics (SVG) - a graphical language written in XML, MathML (used to mark up mathematical formulae), and CML (used to markup chemical formulae).
+        </p>
+        <p>
+          To help web authors move to this syntax, two main flavors of XHTML 1.0 were created:
+          <ul>
+            <li>
+              <b>Strict XHTML 1.0</b>, where authors had to follow the rules to the letter.
+            </li>
+            <li>
+              <b>Transitional XHTML 1.0</b>, where authors could still use presentational elements (such as <b>center</b> and <b>font</b>).
+            </li>
+          </ul>
+        </p>
+        <p>
+          The transitional version of XHTML was created because it allowed authors to continue to follow older practices (with less strict syntax) and use some of the elements and attributes that were going to be removed from future versions of HTML.
+        </p>
+        <p>
+          There was also a third version of XHTML 1.0 called <b>XHTML 1.0 Framest</b>, which allowed web age authors to partition a web browser into several "frames", each of which would hold a different HTML page. These days, frames are very rarely used and are being phased out.
+        </p>
+        <h5>HTML5</h5>
+        <p>
+          Still a work in progress, as printing of this book. In HTML5 web page authors do not need to close all tags, and new elements and attributes will be introduced. At the time of printing, the HTML5 specification had not been completed, but the major browser markers had started to implement amny of the new features, and web page authors were rapidly adopting the new markup.
+        </p>
+        <p>
+          Despite the fact that HTML5 isn not yet complete, you can safely take advantage of the new featuresof the language as long as you endeavour to ensure that users with older browsers will be able to view your pages (even though some of the extra features will not be visible to them).
+        </p>
+<hr />
+        <h3>Doctypes</h3>
+        <h5>HTML5</h5>
+        <xmp>
+          <!DOCTYPE html>
+        </xmp><!--The HTML Example Element (<xmp>) renders text between the start and end tags without interpreting the HTML in between and using a monospaced font.-->
+        <h5>HTML 4</h5>
+        <xmp>
+          <!DOCTYPE html PUBLIC
+          "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3c.org/TR/html4/loose.dtd">
+        </xmp>
+        <h5>Transitional XHTML 1.0</h5>
+        <xmp>
+          <!DOCTYPE html PUBLIC
+          "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        </xmp>
+        <h5>Strict XHTML 1.0</h5>
+        <xmp>
+          <!DOCTYPE html PUBLIC
+          "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3c.ord/TR/xhtml1/DTD/xhtml-strict.dtd>"
+        </xmp>
+        <h5>XML Declaration</h5>
+        <xmp>
+          &lt;?xml version="1.0" ?&gt;
+        </xmp>
+        <p>
+          Since there has been several versions of HTML. each web page should begin with a DOCTYPE declaratio to tell the browser which version of HTML the page is using (although browsers usually display the page even if it is not included).
+        </p>
+        <p>
+          The use of a DOCTYPE can help the browser to render a page correctlly. In the CSS and its box model section ahead we will see this.
+        </p>
+        <p>
+          Because XHTML was written in XML, you will sometimes see pages that use the XHTML strict DOCTYPE start with the optional XML declaration. Where this is used, it should be the first thing in a document. There must be nothing before it, not even a space.
+        </p>
+<hr />
+      <h3>Comments in HTML</h3>
+        <!-- start of introduction -->
+        <h1>Current Exhibition</h1>
+        <h2>Olafur Eliasson</h2>
+        <!-- end of introduction -->
+        <!-- start of main text -->
+        <p>
+          Olafur Eliasson was born in Copenhagen, Denmark in 1967 to Icelandic parents.
+        </p>
+        <p>
+          He is known for his sculpture and large scale installation art employing elemental materials such as light, water, and air temperature to enhance the viewer's experience.
+        </p>
+        <!-- end of main text -->
+        <!-- <a href="mailto:info@exmaple.org">Contact</a> -->
+        <p>
+          To add a comment to your code that will not be seen in the user's browser, you can add text between these characters:
+            <xmp>
+              <!-- comment goes here -->
+            </xmp>
+        </p>
+        <p>
+          It's a good idea to add comments to your code because, no matter how familiar you are with the page at the time of writing, when you come back to it later (or someone else needs to look at the code), comments will make it much easier to understand.
+        </p>
+        <p>
+          The comments aren't viewable to users in the main browser, but they can be viewed by anyone who looks at the source code behind the page. On long pages, you'll often see comments to indicate where sections of the page start and end, or to contain notes tha help explain the code.
+        </p>
+        <p>
+          Comments can also be used around blocks of code to stop that code from being displayed iin the browser. In the example above, the email link has been commented out
+        </p>
+<hr />
+    <h3>Id Attribute</h3>
+      <p>
+        Water and air. So very common are thes substances, they hardly attract attention - and yet they vouchsafe from our existence.
+      </p>
+      <p id="pullquote">
+        Every time I view the sea I feel a calming sense of security, as if visiting my ancestral home; I embark on a voyage of seeing.
+      </p>
+      <p>
+        Mystery of mysteries, water and air are rightthere before us in the sea.
+      </p>
+      <p>
+        Every HTML element can carry the <b>id</b> attribute. It's used to uniquely identify that element from other elements of the page. It's value should start with a letter of underscore (not a number or any other character). It's important that no two (different?) elements on the same page have the same value for their <b>id</b> attributes (otherwise the value is no longer unique).
+      </p>
+      <p>
+        Giving an element a unique identity allows you to style it differently from any other instance of the same element on the page. For example, you may want to assignone paragraph within a page (perhaps a paragraph containing a pull quote) a different style from all of the other paragraphs. in the example above, the paragraph with the <b>id</b> attribute whose value is <b>pullquote</b> is made uppercase using CSS.
+      </p>
+      <p>
+        In JavaScript, <b>id</b> attributes can be used to allow the script to work with that particular element.
+      </p>
+      <p>
+        The <b>id</b> attribute is known as a <b>global attribute</b> because it can be used on any element.
+      </p>
+<hr />
+    <h3>Class Attribute</h3>
+      <p class="important">
+        For a one year period from November 2010, the Marugame Genichiro-Inokuma Musem of Contemporary Art (MIMOCA) will host a cycle of four Hiroshi Sugimoto exhibitions.
+      </p>
+      <p>
+        Each will showcase works by the artist thematically contextualized under the headings "Science," "Architecture," "History," and "Religion" so as to present acomprehensive panorama of the artist's oeuvre.
+      </p>
+      <p>
+        Hours: 10:00 - 18:00 (No admittance after 17:30)
+      </p>
+      <p>
+        Every HTML element can also carry a <b>class</b> attribute. Sometimes, rather than uniquely identifying one element within a document, you will want a way to identify several elements as being different from the other elements on the page. For example, you might have some paragraphs of text that contain information that is more important than others and want to distinguish between these and other elements, or you might want to differentiate between links that point to other pages on your own site and links that point to external sites.
+      </p>
+      <p>
+        To do this you can use the <b>class</b> attribute. It's value should describe the class it belongs to. In the example above, key paragraphs have a <b>class</b> attribute whose value is <b>important</b>.
+      </p>
+      <p>
+        The <b>class</b> attribute on <b>any element</b> can share the same value. So, in the example, the value of <b>important</b> could be used on headings and links, too.
+      </p>
+      <p>
+        By default, using these attributes does not affect the presentation of an element. It will only change their appearance if there is a CSS rule that indicates it should be displayed differently.
+      </p>
+      <p>
+        In this example, CSS has been applied to make elements with a <b>class</b> attribute whose value is <b>important</b> uppercase, and elements with a <b>class</b> attribute whose value is <b>admittance</b> red.
+      </p>
+      <p>
+        If you would like to indicate that an element belongs to several classes, you can seperate class names with a space, as you can see in the third paragraph in the example above.
+      </p>
+<hr />
+    <h3>Block Elements</h3>
+      <h1>Hiroshi Sugimoto</h1>
+      <p>
+        The dates for the ORIGION OF ART exhibition are as follows:
+      </p>
+      <ul>
+        <li>
+          Science: 21 Nov - 20 Feb 2010/11
+        </li>
+        <li>
+          Architecure: 6 Mar - 15 May 2011
+        </li>
+        <li>
+          History: 29 May - 21 Aug 2011
+        </li>
+        <li>
+          Religion: 28 Aug - 6 Nov 2011
+        </li>
+      </ul>
+      <p>
+        Some elements will always appear on a new line in the browser window. These are known as <b>block</b> elements. Example of block elements are: <b>h1,</b> <b>ul,</b> <b>p,</b> and <b>li</b>.
+      </p>
+<hr />
+    <h3>Inline Elements</h3>
+      Timed to a single revolution of the planet around the sun at a 23.4 degrees tilt taht plays out the rhythem of the seasons, this <em>Origins of Art</em> cycle is organized around four themes.: <b>science, architucture, history,</b> and <b>religion</b>.
+      <p>
+        Some elements will always appeear to continue on the same line as their neighboring elements. These are known as <b>inline</b> elements.
+        Examples include <b>a,</b> <b>b,</b> <b>em,</b> amd <b>img</b>.
+      </p>
+<hr />
+    <h3>Grouping Text &#38; Elements In A Block</h3>
+      <div id="header">
+        <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/logo.gif" alt="Anish Kapoor" />
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="biography.html">Biography</a>
+          </li>
+          <li>
+            <a href="works.html">Works</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>    <!-- end of header -->
+      <p>
+        The <b>div</b> element allows you to group a set of elements together in one block-level box.
+      </p>
+      <p>
+        For example, you might create a <b>div</b> element to contain all of the header of your site (the logo and the navigation), or you might create a <b>div</b> element to contain comments from your visitors.
+      </p>
+      <p>
+        In a browser, the contents of a <b>div</b> element will start on a new line, but other than this it will make no difference to the presentation of the page.
+      </p>
+      <p>
+        Using an <b>id</b> or <b>class</b> atribute on the <b>div</b> element, however, means that you can create CSS style rules to indicate how much space the <b>div</b> element should occupy on the screen and change the apppearance of all the elements contained within it.
+      </p>
+      <p>
+        It can also make it easier to follow your code if you have used <b>div</b> elementsto hold each section of the page
+      </p>
+      <p>
+        Since there may be several other elements inside a <b>div</b> element,
+        it can be helpful to add a comment after the closing <b>div</b> tag, as seen above. This allows you to clearly see which opening tag it is supposed to correspond to.
+      </p>
+<hr />
+    <h3>Grouping Text &#38; Elements Inline</h3>
+    <p>
+      Anish Kapoor won the Turner Prize in 1991 and exhibited at the <span class="gallery">Tate Modern</span> gallery in London in 2003.
+    </p>
+    <p>
+      The <b>span</b> element acts like an inline equalivant of the <b>div</b>
+    </p> element. It is used to either:
+    <ol>
+      <li>
+        Contain a section of text where there is no other suitable element to differentiate it from it's surround text.
+      </li>
+      <li>
+        Contain a number of inline elements.
+      </li>
+    </ol>
+      <p>
+        The most common reason why people use <b>span</b> elements is so that they can control the appearance of the content of these elements using CSS.
+      </p>
+      <p>
+        You will usually see that a <b>class</b> or <b>id</b> attibute is used
+        with a <b>span</b> elements:
+        <ul>
+          <li>
+            To explain the purpose of this <b>span</b> element
+          </li>
+          <li>
+            So that CSS styles can be applied to elements that have specific values for these attributes.
+          </li>
+        </ul>
+      </p>
+<hr />
+    <h3>IFrames</h3>
+      <iframe
+      width="450"
+      height= "350"
+      src="http://maps.google.co.uk/maps?q=moma+new=york&amp;output=embed">
+      </iframe>
+      <p>
+        An <b>iframe</b> is like a little window that has been cut into your page - and in that window you can see another page, The term <b>iframe</b> is a abbreviation of inline frame.
+      </p>
+      <p>
+        One common use for iframes (that you may have seen on various sites) is to embed a Google Map into a page. The content of the iframe can be <b>any html page</b> (either located on the same server or anywhere else on the web).
+      </p>
+      <p>
+        An <b>iframe</b> is created using the <b>iframe</b> element. There are a few attributes you will need to know to use it:
+        <ul>
+          <li>
+            <h4>src</h4>
+            The <b>src</b> attribute specifies the URL of the page to show in the frame.
+          </li>
+          <li>
+            <h4>height</h4>
+            The <b>height</b> attribute specifies the height of the iframe in pixels.
+          </li>
+          <li>
+            <h4>width</h4>
+            The <b>width</b> attribute specifies the width of the iframe in pixels.
+          </li>
+        </ul>
+        <iframe
+          src="http://maps.google.co.uk/maps?q=moma+new+york&amp;output=embed"
+          width="450"
+          height="350"
+          frameholder="0"
+          scrolling="no">
+        </iframe>
+        <ul>
+          <li>
+            <h4>scrolling</h4>
+            The <b>scrolling</b> attribute <b>will not</b> be suported by HTML5. In HTML 4 and XHTML, it indicates whether the iframe should have scrollbars or not. This is important if the page inside the iframe is larger than the space you have allowed for it (using the <b>width</b> and <b>height</b> attributes). Scrollbars allow the user to move around the frame to see more content. It can take one of three values: yes (to show scrollbars), no (to hide scrollbars), and auto (to show them only if needed).
+          </li>
+          <li>
+            <h4>frameborder</h4>
+            The <b>frameborder</b> attribute <b>will not</b> be supported
+            in HTML5. In HTML 4 and XHTML, it indicates whether the frame should have a border or not. A vaule of 0 indicates that no border should be shown. A vaule of 1 indicates that a border should be shown.
+            </li>
+            <li>
+            <h4>seamless</h4>
+            In HTML5, a new attribute called <b>seamless</b> can be applied to an <b>iframe</b> where scrollbars are not desired. The <b>seamless</b> attribute (like some other new HTML5 attributes) does not need a value, but you will often see authors give it a value of <b>seamless</b>. Older browsers do not support this attribute.
+            </li>
+        </ul>
+      </p>
+<hr />
+    <h3>Information About Your Pages</h3>
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Information About Your Pages</title>
+            <meta name="descripition"
+              content="An Essay on Installation Art" />
+            <meta name="keywords"
+              content="installation, art, opinion" />
+            <meta name="robots"
+              content="nofollow" />
+            <meta http-equiv="author"
+              content="Jon Duckett" />
+            <meta http-equiv="pragma"
+              content="no-cache" />
+            <meta http-equiv="expires"
+              content="Fri, 04 Apr 2014 23:59:59 GMT" />
+        </head>
+        <body>
+        </body>
+      </html>
+      <p>
+        The <b>meta</b> element lives inside the <b>head</b> element and contains information about your web page.
+      </p>
+      <p>
+        It's not visible to users but fulfills a number of purposes such as telling search engines about your page, who created it, and whether not not it is time sensetive. (If the page is time sensitive, it can be set to expire.)
+      </p>
+      <p>
+        The <b>meta</b> element is an <b>empty</b> element so it doesn't have a closing tag. It uses attributes to carry information.
+      </p>
+      <p>
+        The <b>most common</b> attributes are the <b>name and content</b> attributes, which tend to be <b>used together</b>. These attributes specify properties for the entire page. The value of the <b>name</b> attribute is the property you are setting, and the value of the <b>content</b> attribute is the value that you want to give to this property.
+      </p>
+      <p>
+        In the first line of the code, you can see a <b>meta</b> element where the <b>name</b> attribute indicates an intention to specify a description for the page. The <b>content</b> attribute is where this description is actually specified.
+      </p>
+      <p>
+        The value of the <b>name</b> attribute <b>can be anything</b> you want it to be. Some defined values for this attribute that are commonly used are:
+      </p>
+      <h4>Commonly Used Values For Name Attribute:</h4>
+      <h4>description</h4>
+      This contains a description of the page. This description is commonly <b>used by search engines</b> to understand what the page is about and should be a maximum of 155 characters. Sometimes it is also displayed in the search engine results.
+      <h4>keywords</h4>
+      This contains a list of words a user might search on to find the page. In practice, this is no longer has any noticeable effect on how search engines index your site.
+      <h4>robots</h4>
+      This indicates whether a search engines should add this page to their search results or not. A value of <b>noindex</b> can be used if this page <b>should not</b> be added to their results. A value of <b>nofollow</b> can be used if search engines <b>should</b> add this page to their results <b>but not</b> any pages that it links to.
+      <h4>Additional Attributes Used In Pairs:</h4>
+      <p>
+        The <b>meta</b> element also uses the <b>http-equiv</b> and <b>content</b> attributes in pairs. In the code example, you can see three instances of the <b>http-equiv</b> attribute. Each one has a different purpose:
+      </p>
+      <h4>author</h4>
+      This defines the author of the web page. The value of <b>content</b> is the authors name.
+      <h4>pragma</h4>
+      This prevents the browser from caching the page, by making the value of <b>content</b> <b>"no-cache"</b>. (That is, storing it locally to save time downloading it on subsequent visits.)
+      <h4>expires</h4>
+      Because browsers often cache the content of a page, the <b>expires</b> option can be used to indicate when the page should expire (and no longer be cached). The value of <b>content</b> is the <b>date</b> when the page is to expire. Note that the date <b>must</b> be specified in the format shown.
+<hr />
+    <h3>Escaping Characters</h3>
+      <p>
+        There are some characters that are <b>used in</b> and <b>reserved</b> by HTML code. (For example, the left and right angles brackets.) If you want these to appear on your page, you need to use what are termed <b>"escape" characters</b> (also known as escape codes or entity references.) For example, to write a left angled bracket, you can use either <b>&lt;</b> or <b>&#60;</b> (whichever one shows up in the browser as the left bracket is the correct format for this browser, see code). For an ampersand, you can use either <b>&amp;</b> or <b>&#38;</b>.
+      </p>
+      <p>
+        There are also <b>special codes</b> that can be used to show symbols such as copyright and trademark, currency symbols, mathematical characters, and some punctuation marks. For example, if you want to include a copyright symbol on a web page you can either use <b>&copy;</b> or <b>&#169;</b>.
+      </p>
+      <p>
+        When using <b>escape characters</b>, it is important to <b>check the page</b> in your browser to <b>ensure</b> that the correct symbol shows up. This is because some fonts <b>do not</b> support all of these characters and you might therefore need to <b>specify a different font</b> for these characters in your <b>CSS code</b>.
+      </p>
+      <p>
+        Kenzo, go look in your bookmarks, inside the HTML CSS Reference folder. You bookmarked this books resource page listing escape and special character codes.
+      </p>
+<hr />
+    <h3>Example: Extra Markup</h3>
+    <!DOCTYPE html PUBLIC
+     "-//W3C//DTD HTML 4.0 Transitional//EN"
+     "http://www.w3c.org/TR/html4/loose.dtd">
+     <html>
+       <head>
+         <meta name="description" content="Telephone, email, and diections for The Art Bookshop, London, UK"  />
+           <title>Contact The Art Bookshop, London UK</title>
+       </head>
+       <body>
+        <div id="ex_header">
+          <h1>The Art Bookshop</h1>
+            <ul>
+              <li>
+                <a href="index.html">home</a>
+              </li>
+              <li>
+                <a href="index.html">new publications</a>
+              </li>
+              <li class="current-page">
+                <a href="index.html">contact</a>
+              </li>
+            </ul>
+        </div><!-- end header -->
+        <div id="content">
+          <p>
+            Charing Cross Road, London, WC2, UK
+          </p>
+          <p>
+            <span class="contact">Telephone </span>0207 946 0946
+          </p>
+          <p>
+            <span class="contact">Email </span><a href="mailto:books@example.com">books@example.com</a>
+          </p>
+          <iframe width="425" height="275" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=charing+cross+road+london&amp;output=embed"></iframe>
+        </div><!-- end of content -->
+        <p>
+          &copy; The Art Bookshop
+        </p>
+       </body>
+     </html>
+        <p>
+          The example starts by using the DOCTYPE to indicate that this is an HTML 4 web page. In the head, you can see a <b>meta</b> tag describing the page's content. Several elements use <b>id</b> and <b>class</b> attributes to identify their purpose. The copyright symbol has been added using an <b>escape code</b>. Parts of the page have been grouped using <b>div</b> elements, and comments have been added to indicate what the <b>div</b> elements are closing.
+        </p>
+<hr />
+    <h3>Summary</h3>
+    <ul>
+      <li>
+        DOCTYPES tell browsers which version of HTML you are using.
+      </li>
+      <li>
+        You can add <b>comments</b> to your code between &#8249;!-- and --&#8250;
+      </li>
+      <li>
+        The<b>id</b> and <b>class</b> attributes allow you to identify particular elements
+      </li>
+      <li>
+        The <b>div</b> and <b>span</b> elements allow you to group block-level and inline element together
+      </li>
+      <li>
+        <b>iframes</b> cut windows into you web page through which other pages can be displayed
+      </li>
+      <li>
+        The <b>meta</b> tag allows you to supply all kinds of information about your web page.
+      </li>
+      <li>
+        <b>Escape characters</b> are used to inculde special characters on your page like, copyright, left and right arrows, etc.
+      </li>
+    </ul>
+  </body>
+</html>

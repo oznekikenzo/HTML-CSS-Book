@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 4: Links</title>
+</head>
+<body>
+
+  <h2>Chapter 4: Links</h2>
+<br />
+
+<p>
+  Common form of links are:
+</p>
+  <ul>
+    <li>
+      Links from one website to another
+    </li>
+    <li>
+      Links from one page to another on the same web site
+    </li>
+    <li>
+      Links from one part of a web page to another part on the same page
+    </li>
+    <li>
+      Links that open in a new browser
+    </li>
+    <li>
+      Links that start up your email program and address a new email to someone
+    </li>
+  </ul>
+<hr />
+
+
+<h2>Writing Links</h2>
+<p>
+  <a href="http://www.imdb.com">IMDB</a>
+</p>
+
+<p>
+  Write link text as specific as possible to make user experience better. For example, rather than "places to stay", use "hotels in New York"
+</p>
+<hr />
+
+<h2>Linking to other sites, ABSOLUTE URLs</h2>
+
+  <p>
+    Movie Reviews:
+    <ul>
+      <li>
+        <a href="http//:www.empireonline.com">
+          Empire
+        </a>
+      </li>
+      <li>
+        <a href="http//:www.metacritic.com">
+          Metacritic
+        </a>
+      </li>
+      <li>
+        <a href="http//:www.rottentomatoes.com">
+          Rotten Tomatoes
+        </a>
+      </li>
+      <li>
+        <a href="http//:www.variety.com">
+          Variety
+        </a>
+      </li>
+    </ul>
+  </p>
+
+<p>
+  Links are created using the <b>a</b> element. It has an <b>attribute</b> called <b>href</b>. The <b>value</b> of href is <b>the page</b> you want to be redirected to when it's clicked.
+</p>
+
+<p>
+  The <b>link text</b> that appears between the opening <b>a</b> tag and closing <b>a</b> tag, can be clicked to be taken to the specified page.
+</p>
+
+<p>
+  When you link to a diffrent website, the value of the href attribute will be the full web address, which is known as an <b>ABSOLUTE URL</b>. It can be the path to a specific page on the website, if not it will go to the homepage of the linked site.
+</p>
+
+<p>
+  Browsers show links in blue with an underline by default.
+</p>
+<hr />
+
+<h2>Linking to other pages on the same site, RELATIVE URLs</h2>
+
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="about-us.html">About</a>
+      </li>
+      <li>
+        <a href="movies.html">Movies</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+
+<p>
+  When linking to other pages within the same site, you don't need to specify the domain name in the URL. Use the shorthand known as the <b>RELATIVE URL</b>.
+</p>
+
+<p>
+  If all pages of the site are in the same folder, the value of the href attribute is just the name of the file.
+</p>
+
+<p>
+  If you have diffrent pages of a site in diffrent folders, there is a more complex syntax to indicate where the page is in relation to the current page.
+</p>
+<hr />
+
+<h2>Directory Structure</h2>
+
+<img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/directory_structure.jpg" alt="Directory Structure" title="Great Example!"  />
+<br />
+<h3>Structure</h3>
+  <p>
+   The image above shows the directory structure for a fictional website called ExampleArts
+  </p>
+
+  <p>
+  On larger websites it's a good idea to organize your code by placing the pages for each different section of the site into a new folder. Folders on a website can be referred to as directories.
+  </p>
+
+  <p>
+   Top Level folder (examplearts in image) is known as the <b>root</b> folder. It contains all the other files and folders for a website. Each section of the site is placed into seperate folder to help organization of the files.
+  </p>
+
+<h3>Relationships</h3>
+  <p>
+    The relationship between files and folders on a website is described using the same terminology as a family tree.
+  </p>
+
+  <p>
+    In the diagram above, you can see some relationships have been drawn in.
+  </p>
+
+  <p>
+    The <b>examplearts</b> folder is a parent ofthe <b>movies, music,</b> and <b>theater</b> folders. And the <b>movies, music,</b> and <b>theater</b> folders are children of the <b>examplearts</b> folder.
+  </p>
+
+<h3>Homepages</h3>
+
+  <p>
+  The main homepage (and the homepages of each section in a child folder) is called <b>index.html</b>. Web servers are usually set up to return the index.html file if no file name is specified.
+  </p>
+
+  <p>
+  If you enter <b><i>examplearts.com</i></b> it will return <b><i>examplearts.com/index.html</i></b> and <b><i>examplearts.com/music</i></b> will return <b><i>examplearts.com/music/index.html</i></b>.
+  </p>
+<hr />
+
+<h2>Relative URLs</h2>
+
+  <p>
+    When linking to a page on your own website, you don't need to specify the domain name. Use <b>relative URLs</b> which are shorthand to tell the browser where a page is in relation to the current page. They are quicker to write.
+  </p>
+
+  <p>
+    This is helpful when creating a new website or learning HTML because you can create links between pages when they are only on your computer, before you have to get a domain name and upload to the web.
+  </p>
+
+  <p>
+    If all files in your site are in one folder, simply use the file name for that page.
+  </p>
+
+  <p>
+    If the site is organized into seperate folders (or directories), tell the browser how to get from the page it is <b>CURRENTLY</b> on to the page you are <b>LINKING</b> to. Define the path.
+  </p>
+
+  <p>
+    If you link to the same page from two diffrent pages you might, therefore, need to write two different URLS. Different paths.
+  </p>
+
+  <p>
+    These links make use of the same terminology (borrowed from that of family trees) you met on the previous page which introduces directory structure.
+  </p>
+
+  <p>
+    These examples are relative to the diagram above, the Directory Structure Diagram.
+  </p>
+
+  <p>
+    To link to the <b>SAME</b> folder: link to music reviews from music homepage, just use the file name.
+    <a href="reviews.html">Reviews</a>
+  </p>
+
+  <p>
+    To link to a <b>CHILD</b> folder: link to music listings from homepage. Use the name of the child folder, followed by a forward slash, then the file name.
+    <a href="music/listings.html">Listings</a>
+  </p>
+
+  <p>
+    To link to a <b>GRANDCHILD</b> folder: link to DVD reviews from homepage. Use the name of the child folder, followed by a forward slash, then the name of the grandchild folder, followed byanother forward slash, then the file name.
+    <a href="movies/dvd/reviews.html">Reviews</a>
+  </p>
+
+  <p>
+    To link to a <b>PARENT</b> folder: link to the homepage from music reviews. Use../ to indicate the folder above the current one, then follow it with the file name.
+    <a href="../index.html">Home</a>
+  </p>
+
+  <p>
+    To link to a <b>GRANDPARENT</b> folder: link to the homepage from DVD reviews. Repeat the ../ to indicate that you want to go up two folders (rather than one), hten follow it with the file name.
+    <a href="../../index.html">Home</a>
+  </p>
+
+  <p>
+    When a page is live there are some other techniques used for navagating directories. There may be the name of a child folder without the name of the file. In this case the web server will usually try to show the homepage for that section. A forward slash will return the homepage for the entire site and a forward slash followed by a file name will return that file providing it's in the root directory.
+  </p>
+<hr />
+
+<h2>Email Links</h2>
+
+  <a href="mailto:kenzoimasuda@gmail.com">Email Kenzo</a>
+
+
+  <p>
+    To create a link that starts up the user's email program and addresses an email to a specified email address, use the <b>a</b> element. This time the value of the <b>href</b>
+    attribute starts with <b>mailto:</b> followed by the address you want the email to be sent to.
+  </p>
+  <hr />
+
+<h2>Opening Links in a new Window</h2>
+
+  <a href="http://www.imdb.com" target="_blank">Internet Movie Database</a> (opens in new window)
+
+  <p>
+    If you want a link to open in a new window, use the <b>target attribute</b>, after the href, on the opening tag. The <b>value</b> of target should be <b>_blank</b>.
+  </p>
+  <p>
+    You should avoid opening links in new windows, you want people to stay on your page, hopefully the user will return to your site after you redirected them.
+  </p>
+
+  <p>
+    A common reason for opening a new window is if it points to another website. It's considered good practice to <b>notify</b> that link will open in a new window.
+  </p>
+
+  <p>
+    This is my note, Kenzo. In some cases I could see why opening a new window on my own site would enhance UI.
+  </p>
+<hr />
+
+<h2>Linking to parts on the same page</h2>
+
+  <h1 id="top">Film Making Terms</h1> <br />
+  <a href="#arc_shot">Arc Shot</a> <br />
+  <a href="#interlude">Interlude</a> <br />
+  <a href="#prologue">Prologue</a> <br /><br />
+  <h2 id="arc_shot">Arc Shot</h2>
+  <p>
+    A shot in which the subject is photographed by an encircling or moving camera
+  </p>
+  <h2 id="interlude">Interlude</h2>
+  <p>
+    A brief, intervening film scene or sequence, not specifically tied to the plot, that appears within a film
+  </p>
+  <h2 id="prologue">Prologue</h2>
+  <p>
+    A speech, preface, or introduction, or brief scene preceding the main action or plot of a film; contrast to epilouge
+  </p>
+  <p>
+    <a href="#top">Top</a>
+  </p>
+
+  <p>
+    The <b>id</b> attribute can be used on any element, here it's used to <b>identify points</b> in the page that a link will go. The value of the id should start with a letter or underscore <b>(no numbers or characters)</b>. On a single page <b>no two id's</b> should be the <b>same</b>.
+  </p>
+
+  <p>
+    To link to an element that uses an id attribute you use the <b>a</b> element, but the <b>value</b> of href <b>starts with</b> the <b># followed by the id</b>.
+  </p>
+<h3>Linking to specific part of another page</h3>
+  <p>
+    When linking to a specific part of a different page (your site or another site), as long as the page being linked has <b>id attributes</b> that identify specific parts of the page, you can add the same syntax to the end of the link for that page.
+  </p>
+
+  <p>
+    The href attribute will have address (either absolute or relative), followed by # and the value of the id attribute that is used on the element being linked to.
+  </p>
+  <p>
+    For example, to link to the bottom of the homepage of the website that accompanies this book, you would write:
+    <p>
+    <a href="http://www.htmlandcssbook.com/#bottom"></a>
+    </p>
+
+  </p>
+  <hr />
+
+<h2>Example Links</h2>
+
+  <html>
+    <head>
+      <title>Links</title>
+    </head>
+    <body>
+      <h1 id="top_">Film Folk</h1>
+      <h2>Festival Diary</h2>
+      <p>
+      Here are some of the film festivals we will be attending this year.<br />Please <a href="mailto:filmfolk@example.com">contact us</a> if you would like more information.
+      </p>
+      <h3>January</h3>
+      <p>
+        <a href="http://www.sundance.org">Sundance Film Festival</a><br />
+        Park City, Utah, USA<br />
+        20 - 30 January 2011
+      </p>
+      <h3>February</h3>
+      <p>
+        <a href="http://www.tropfest.com">Tropfest</a><br />
+        Sydney, Austrailia<br />
+        20 February 2011
+      </p>
+      <!--additioanl content-->
+      <p>
+        <a href="about.html">About Film Folk</a>
+      </p>
+      <p>
+        <a href="#top_">Top of page</a>
+      </p>
+    </body>
+  </html>
+
+  <p>
+    The <b>h1</b> element is used with an <b>id</b> attribute at the top of the page so that link can be added to take readers from the bottom of the page to the top. An <b>email link</b> allows readers to contact the author of the webpage, there are links to <b>absolute/qualified</b> URLs, and at the end, a link to a <b>relative</b> URL which is an "about" page that lives in the same directory.
+  </p>
+</body>
+</html>

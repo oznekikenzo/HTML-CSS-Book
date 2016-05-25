@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 6: Tables</title>
+</head>
+
+<body>
+  <h1>Chapter 6: Tables</h1>
+  <br />
+   <p>
+     When representing info in a table, think in terms of a grid made up of rows and columns, like a spreadsheet. This chapter covers:</p>
+     <ul>
+      <li>
+        Using the four key elements for creating tables
+      </li>
+      <li>
+        Representing complex data using tables
+      </li>
+      <li>
+        Adding captions to tables
+      </li>
+     </ul>
+     <p>
+     A table represents info in a grid format. Financials, TV schedules, sports results, etc. It references data on two axes. Each block is called a TABLE CELL.</p>
+     <p>
+       In HTML a table is written out row by row.
+     </p>
+  <hr />
+
+  <h2>Basic Table Structure</h2>
+
+  <table>
+    <tr>
+      <td>
+        15
+      </td>
+      <td>
+        15
+      </td>
+      <td>
+        30
+      </td>
+    </tr>
+    <tr>
+      <td>
+        45
+      </td>
+      <td>
+        60
+      </td>
+      <td>
+        45
+      </td>
+    </tr>
+    <tr>
+      <td>
+        60
+      </td>
+      <td>
+        90
+      </td>
+      <td>
+        90
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    The table element starts the table. Contents are written out row by row. A closing table element ends the table.
+
+  </p>
+
+  <p>
+    The TR element indicates the start of each row, TR stands for Table Row. It is  followed by one or more TD elements, one for each cell in the row. The row ends with a closing TR tag.
+
+  </p>
+
+  <p>
+    Each cell of the table is represented by a TD tag, TD stands for table data.
+    At the end of the cell a closing TD tag is used.
+    Some browsers automatically draw lines around the table and/or cells. This can be controlled with CSS for this, the following examples, and all tables.
+  </p>
+  <hr />
+
+  <h2>Table Headings</h2>
+
+  <table>
+    <tr>
+      <th>              <!--the empty cell-->
+        <th scope="col">
+          Saturday
+        </th>
+        <th scope="col">
+          Sunday
+        </th>
+      </th>             <!--the empty cell-->
+      <tr>
+        <th scope="row">
+          Tickets Sold:
+        </th>
+          <td>
+            120
+          </td>
+          <td>
+            135
+          </td>
+        </tr>
+      <tr>
+        <th scope="row">
+          Total Sales:
+        </th>
+          <td>
+            $600
+          </td>
+          <td>
+            $675
+          </td>
+      </tr>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    The TH element is used just like the TR element, but its purpose is to represent the heading for either a column or row. TH stands for Table Heading.
+  </p>
+  <p>
+    Even if the cell has no content, the TD or TH element should be used to represent the presence of an empty cell, otherwise the table won't render properly. The first cell the the first row shows an empty TH element. See comment in html file.
+  </p>
+  <p>
+    Using the TH element for headings helpsuse of screen readers, improves ability for search engines to index the pages, and give greater control of the tables appearance with CSS.
+  </p>
+  <p>
+    The scope attribute on TH indicates whether the heading is a row or column.
+    Browsers usually display the content to the TH element in bold and in the middle of the cell
+  </p>
+  <hr />
+
+  <h2>Spanning Columns</h2>
+
+  <table>
+    <tr>
+      <th>    <!--the empty cell-->
+        <th>
+          9am
+        </th>
+        <th>
+          10am
+        </th>
+        <th>
+          11am
+        </th>
+        <th>
+          12am
+        </th>
+      </th>    <!--the empty cell-->
+    </tr>
+    <tr>
+      <th>
+        Monday
+      </th>
+      <td colspan="2">
+        Geography
+      </td>
+      <td>
+        Math
+      </td>
+      <td>
+        Art
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Tuesday
+      </th>
+      <td colspan="3">
+        Gym
+      </td>
+      <td>
+        Home Ec
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    Sometimes you may need the cells in a table to strech across more than one column. The colspan attribute can be used to do this on TH and TD elements. The value of this attribute equals the number of columns to be spanned.
+  </p>
+  <p>
+    When a cell extends across more than one column, the TD or TH cells that would have been in the place of the wider cells are not included in the code.
+  </p>
+  <hr />
+
+  <h2>Spanning Rows</h2>
+
+  <table>
+    <tr>
+      <th>
+        <th>
+          ABC
+        </th>
+        <th>
+          BBC
+        </th>
+        <th>
+          CNN
+        </th>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        6pm - 7pm
+      </th>
+      <td rowspan="2">
+        Movie
+      </td>
+      <td>
+        Comedy
+      </td>
+      <td>
+        News
+      </td>
+    </tr>
+    <tr>
+      <th>
+        7pm - 8pm
+      </th>
+      <td>
+        Sport
+      </td>
+      <td>
+        Current Affairs
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    Spanning across row more than one row will be necessary as well. The rowspan attribute can be used on TH and TD elements. The value indicates how many rows the cell should span. In the last TR element there are only three elements, even though there are four columns in the result. This is becsuse the movie element above uses rowspan to strech down and take over the cell below. Much like colspan takes over horizontal cells.
+  </p>
+  <hr />
+
+  <h2>Long Tables</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Income
+        </th>
+        <th>
+          Expenditure
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>
+          1<sup>st</sup> January
+        </th>
+        <td>
+          250
+        </td>
+        <td>
+          36
+        </td>
+      </tr>
+      <tr>
+        <th>
+          2<sup>nd</sup> January
+        </th>
+        <td>
+          285
+        </td>
+        <td>
+          48
+        </td>
+      </tr>
+      <tr>
+        <th>
+          3<sup>rd</sup> January
+        </th>
+        <td>
+          260
+        </td>
+        <td>
+          42
+        </td>
+      </tr>
+      <tr>
+        <th>
+          4<sup>th</sup> January
+        </th>
+        <td>
+          290
+        </td>
+        <td>
+          38
+        </td>
+      </tr>
+      <tr>
+        <th>
+          5<sup>th</sup> January
+        </th>
+        <td>
+          310
+        </td>
+        <td>
+          115
+        </td>
+      </tr>
+      <tr>
+        <th>
+          6<sup>th</sup> January
+        </th>
+        <td>
+          168
+        </td>
+        <td>
+          14
+        </td>
+      </tr>
+      <tr>
+        <th>
+          7<sup>th</sup> January
+        </th>
+        <td>
+          226
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <th>
+          8<sup>th</sup> January
+        </th>
+        <td>
+          253
+        </td>
+        <td>
+          37
+        </td>
+      </tr>
+      <tr>
+        <th>
+          9<sup>th</sup> January
+        </th>
+        <td>
+          294
+        </td>
+        <td>
+          33
+        </td>
+      </tr>
+      <tr>
+        <th>
+          10<sup>th</sup> January
+        </th>
+        <td>
+          216
+        </td>
+        <td>
+          46
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <td>
+            7824
+          </td>
+          <td>
+            1241
+          </td>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <br />
+
+  <p>
+    Three elements help distinguish between the main content of the table and the first and last rows (which can contain diffrent content). These elements help people with screen readers and also allow you to style these sections differently than the rest of the table with CSS.
+  </p>
+
+  <p>
+    The <b>thead</b> element is used to create row and column headings for the table.
+  </p>
+
+  <p>
+    The body of the table should sit inside the <b>tbody</b> element.
+  </p>
+
+  <p>
+    The <b>tfoot</b> element is used to create the footer of the table. It follows after the tbody element is closed.
+  </p>
+
+  <p>
+    By default browsers rarely treat these three elements any differently from other elements. Designers often use CSS styles to change their appearance, so they stand out from the body.
+  </p>
+
+  <p>
+    Some Content Management Systems (CMS) will automatically enter a thead element automatically if the first row of your table contains a th element. These are built in to the CMS's editor tools.
+  </p>
+
+  <p>
+    Part of the reason for having seperate thead and tfoot elements is if you have a table taller than your screen (or, in print longer than a page) then the browser can keep the header and footer visible whle the contents of the table scroll. It is intended to make it easier for users to see which column the data is in. This functionality is not implemented by default in any current browser.
+  </p>
+  <hr />
+
+  <h2>Old Code: Width and Spacing</h2>
+
+  <table width="400" cellpadding="10" cellspacing="5">
+    <tr>
+      <th width="150">
+        <th>
+          Withdrawn
+        </th>
+        <th>
+          Credit
+        </th>
+        <th width="150">
+          Balance
+        </th>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        January
+      </th>
+      <td>
+        250.00
+      </td>
+      <td>
+        660.50
+      </td>
+      <td>
+        410.50
+      </td>
+    </tr>
+    <tr>
+      <th>
+        February
+      </th>
+      <td>
+        135.55
+      </td>
+      <td>
+        895.20
+      </td>
+      <td>
+        1170.15
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    All the attributes in this table have been replaced with CSS. The <b>width</b> attribute on the opening table tag indicated how wide the table should be. It could be used on opening TH and TD tags to specify the width of individual cells. The value is the width of the table or cell in pixels.
+  </p>
+
+  <p>
+    Columns need to form a staight line, so you often only see the width attribute on the first row (and all subsequent rows would use that setting).
+    The opening table tag can use the cellpadding attribute to add space inside each cell of the table and to create space between each cell. The values are given in pixels.
+  </p>
+  <hr />
+
+  <h2>Old Code: Border and Background</h2>
+
+  <table border="2" bgcolor="#efefef">
+    <tr>
+      <th width="150">
+        <th>
+          Withdrawn
+        </th>
+        <th>
+          Credit
+        </th>
+        <th width="150" bgcolor="#cccccc">
+          Balance
+        </th>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        January
+      </th>
+      <td>
+        250.00
+      </td>
+      <td>
+        660.50
+      </td>
+      <td bgcolor="#cccccc">
+        410.50
+      </td>
+    </tr>
+    <tr>
+      <th>
+        February
+      </th>
+      <td>
+        135.55
+      </td>
+      <td>
+        895.20
+      </td>
+      <td bgcolor="#cccccc">
+        1170.15
+      </td>
+    </tr>
+  </table>
+  <br />
+
+  <p>
+    The <b>border attribute</b> was used on both <b>table</b> and <b>td</b> elements to indicate the width of the border in pixels.
+  </p>
+   <p>
+     The <b>bgcolor attribute</b> was used to indicate background colors of either the entire table or individual table cells. The value is usually a hex code.
+   </p>
+   <p>
+     This example uses HTML border and bgcolor atributes. No CSS is used here. When building a website CSS should be used to control the appearance of a table rather than these attributes.
+   </p>
+   <hr />
+
+   <h2>Example Table</h2>
+
+  <html>
+  <head>
+    <title>Tables</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <th scope="col">
+              Home Started Hosting
+            </th>
+            <th scope="col">
+              Premium Business Hosting
+            </th>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            Disk Space
+          </th>
+          <td>
+            250mb
+          </td>
+          <td>
+            1gb
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            Bandwidth
+          </th>
+          <td>
+            5gb per Month
+          </td>
+          <td>
+            50gb per Month
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            Email Accounts
+          </th>
+          <td>
+            3
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            Server
+          </th>
+          <td>
+            Shared
+          </td>
+          <td>
+            VPS
+          </td>
+        </tr>
+        <tr>
+            <th scope="row">
+              Support
+            </th>
+            <td>
+              Email
+            </td>
+            <td>
+              Telephone and email
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+              Setup
+            </th>
+            <td>
+              Free
+            </td>
+            <td>
+              Free
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+              FTP Accounts
+            </th>
+            <td>
+              1
+            </td>
+            <td>
+              5
+            </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>
+            <td colspan="2">
+              Sign Up Now and Save 10%!
+            </td>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+  </html>
+  <br />
+
+  <p>
+    There are two table headings in the first row and column of the table. The empty cell in the top left still has a <b>th</b> element to represent it. Each cell of the table must be accounted for by a <b>th</b> or a <b>td</b> element.
+  </p>
+  <p>
+    The <b>th</b> elements use the scope attributeti indicate wheter they are headings for a row or column. The final row includes the <b>colspan</b> attrubute to spead across two columns.
+  </p>
+</body>
+</html>

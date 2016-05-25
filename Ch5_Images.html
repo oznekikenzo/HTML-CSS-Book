@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 5: Images</title>
+</head>
+<body>
+  <h1>Chapter 5: Images</h1>
+
+  <p>
+    Taking time in selecting and prepaing images for your site will make it more attractive and professional. We'll learn:
+  </p>
+  <ul>
+   <li>
+    How to include an image in a webpage using HTMl.
+   </li>
+   <li>
+    Pick which image format to use
+   </li>
+   <li>
+    Show an image at the right size
+   </li>
+   <li>
+    Optimize an image for use on the web to make pages load faster
+   </li>
+  </ul>
+
+  <p>
+    Keeping images for your website in a seperate folder keeps your files organized and helps you understand how the site is organized as well. Sub folders can be used for buttons and logos; Interface items = Interface Folder! A products folder, etc.
+  </p>
+<hr />
+
+<h2>Adding Images</h2>
+  <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/gorilla_fight.jpg" alt="Gorilla Fight" title= "Some bad ass gorillas fighting...probably over food." />
+
+  <p>
+    <b>Img</b> tags are empty elements, they have no closing tag. They must have <b>src</b> and <b>alt</b> attributes. The <b>scr atttibute</b> tells the browser where the image can be found. Usually this will be a relative URL pointing to an image on your site.
+  </p>
+  <p>
+    The <b>alt attribute</b> is an accurate description of the image if the image cannot be viewed. If the image is just to make the page attractive and it has no meaning, you can leave the quotes empty. Alt should <b>ALWAYS</b> be used.
+  </p>
+  <p>
+     The <b>title attribute</b> provides additional info about the image when the user hovers over the image.
+  </p>
+  <hr />
+
+<h2>Height and Width of Images</h2>
+
+  <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/gorilla_fight.jpg" alt="Gorilla Fight" width="600" height="450" title="These animals be crazy yo!" />
+
+  <p>
+    <b>Height</b> and <b>width attributes</b> can also be added to the img tag. Images take longer to load than the HTML code that makes up a page. Its a good idea to specify the size of the image so the browser can render the rest of the page, while leaving the right amount of space for the image to load.
+    Image sizes are more frequently being defined in CSS.
+  </p>
+<hr />
+
+<h2>Where to place Images in your code</h2>
+
+  <h3>Image placed before a paragraph</h3>
+  <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/upside_down_turtle.jpg" alt="Upside down turtle" title="Ain't my day!" />
+  <p>
+    This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him.
+  </p>
+
+  <h3>Image placed inside the start of a paragraph</h3>
+  <p>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" />This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him.
+  </p>
+
+  <h3>Image placed in the middle of a paragraph</h3>
+  <p>
+    This guy mouthed off to the petshop owner about dirty turtle water.<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" /> Look where it got him.
+  </p>
+  <br />
+  <br />
+  <p>
+    Placement is important. Browsers show images in one of two ways.
+  </p>
+  <p>
+    Block elements, like <b>h1</b> and <b>p</b>, always appear on a new line.
+    If the img is followed by a block level element, then the block level element will sit on a new line after the image is shown, like the first example.
+  </p>
+  <p>
+    Inline elements, like <b>b</b>, <b>em</b>, and <b>img</b>, sit within a block element and DO NOT start on a new line. If the img element is inside a block element, text or other inline elements will flow around the image, like in the second and third example.
+  </p>
+  <hr />
+
+<h2>Old Code: Aligning Images Horizontally</h2>
+<h3>Align attribute added to img</h3>
+  <p>
+    <h4>Align left</h4>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" align="left" />This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him.<br /><br /><br /><br /><br />
+  </p>
+<br />
+  <p>
+    <h4>Align right</h4>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" align="right" />This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him.<br /><br /><br /><br /><br />
+  </p>
+  <p>
+    This is now done in CSS. Older code will have this attribute. Left and right are values it can take on. CSS padding and margin properties can be set so the images aren't butted against the text.
+  </p>
+<hr />
+
+<h2>Old Code: Aligning Images Vertically</h2>
+<h3>Align top</h3>
+  <p>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" align="top" /><b>This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him. Going nowhere fast in an empty onion barrel of</b> shame, confusion, and self denial. Don't end up like this.
+  </p>
+<h3>Align middle</h3>
+  <p>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" align="middle" /><b>This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him. Going nowhere fast in an empty onion barrel of</b> shame, confusion, and self denial. Don't end up like this.
+  </p>
+<h3>Align Bottom</h3>
+
+  <p>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQt9965Zdu1ir8CXdZDKEWyTCmNoSXnx4MkclqHhBJTApYvcbJkpZmYxTK3" alt="Upside down turtle" title="Ain't my day!" align="bottom" /><b>This guy mouthed off to the petshop owner about dirty turtle water. Look where it got him. Going nowhere fast in an empty onion barrel of</b>  shame, confusion, and self denial. Don't end up like this.
+  </p>
+
+  <p>
+    Using the align top, middle, bottom attribute aligns the first line of text in said positions. To have all text wrap around the image use CSS float property. In older code the align attribute was used with 'left' and 'right' to get a wrap effect, this is no longer done.
+  </p>
+<hr />
+
+<h2>Figure and Figcaption</h2>
+
+  <p>
+  <figure>
+  <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/kangaroofight.jpg" alt="Jerky Kangaroo" title="Kangaroos HATE people!" />
+  <br />
+  <figcaption>
+    Most kangaroos don't attack when provoked due to their tender nature. Boiling under all this tenderness is a jerky animal ready to explode. "Go back to Austrailia Jerk Face!"
+  </figcaption>
+  </figure>
+  </p>
+
+  <p>
+    Images often come with captions. The <b>figure</b> element contains an image and caption so the two are associated.
+<br>
+    You can have more than one image inside the figure element, as long as they all share the same caption.
+<br />
+    Browsers sometimes indent the contents of the figure element.
+  </p>
+
+  <p>
+    The <b>figcaption</b> element allows captions to be added to an image. It is used within the figure element.
+  </p>
+  <p>
+    Before HTML 5 there was no way to associate an img element with a caption.
+    Older browsers that don't understand HTML 5 elements ignore the new elements and display the content of them.
+  </p>
+<hr />
+
+<h2>Image Formats</h2>
+
+  <p>
+    <b>JPEG</b> should be used when there are many different colors. It is best for all photos so you can see all the subtle differences in the colors, even for snow or sky images.
+  </p>
+
+  <p>
+    <b>GIF</b> or <b>PNG</b> should be used images have few colors of large areas of the same color. When a picture has an area that is filled with exactly the same color it's known as <b>FLAT COLOR</b>. Logos, illustrations, and diagrams often use flat colors.
+  </p>
+
+  <p>
+    To create an image that is partially transparent there are two formats to use.
+  </p>
+
+  <p>
+    If the transparent part of the image has straight edges and it's 100% transparent save as a <b>GIF</b>, with the transparency option selected.
+  </p>
+
+  <p>
+    If the transparent part has diagonal or rounded edges or you want a semi-opaque transparency or a drop shadow, save as a <b>PNG</b>.
+  </p>
+<hr />
+
+<h2>Example Images</h2>
+
+  <html>
+    <head>
+      <title>Images</title>
+    </head>
+    <body>
+      <h1><img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/logo_A_to_Zucchini.gif" alt="From A to Zucchini" />
+      </h1>
+      <figure>
+        <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/chocolte_islands.jpg" alt="Chocolate Islands" title="Chocolate Islands Individual Cakes"  />
+        <p>
+          <figcaption>
+            This recipe for individual chocolate cakes is so simple and so delectable!
+          </figcaption>
+        </p>
+      </figure>
+      <h4>More Recipes:</h4>
+      <p>
+        <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/lemon_posset.jpg" alt="Lemon Posset" title="Lemon Posset Dessert"  />
+        <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/roasted_brussels.jpg" alt="Roasted Brussel Sprouts" title="Roasted Brussel Sprouts Side Dish"  />
+        <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/zucchini_cake.jpg" alt="Zucchini Cake" title="Zucchini Cake No Frosting"  />
+      </p>
+    </body>
+  </html>
+<hr />
+
+<h2>How to make an Image a Link</h2>
+<p>
+  This from Codecademy, how to make an image a link.
+    Click that image
+    Good work! Now you know how to add links and images to your website. Why not make that image a link? For example:
+</p>
+
+  <a href="http://www.codecademy.com/">Text Can Be Placed Here
+      <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/code_duck.jpg"/>Or Here(optional text)
+  </a>
+
+<p>
+  First we open our <b>a</b> tag and point the href to http://www.codecademy.com/.</p>
+<p>
+  Instead of using text inside the <b>a</b> tag, we use an <b>img</b> tag. Add the <b>src</b> to the image tag and close the <b>img</b> tag. Text placed within the <b>a</b> tag will appear in the order it was placed within the <b>a</b> tag. Clicking on anything within the <b>a</b> tag will take you to the specified website.
+</p>
+<p>
+  Finally, we have our closing <b>a</b> tag.
+    Now when you click on the text before and after the duck, and the duck, you will be taken to http://www.codecademy.com!
+</p>
+<hr />
+
+<h2>Additional Images as links from Codecademy</h2>
+<p>
+  Placing one HTML tag inside of another is called nesting.
+</p>
+
+<p>
+  In the body section, create an <b>a</b> tag.<br />
+  Use the <b>href</b> attribute point your link to a website, like  http://www.codecademy.com<br />
+  Now create your <b>img</b> tag between your opening <b>a</b> tag and closing <b>a</b> tag. Don't forget the src!
+    Finally, close your <b>a</b> tag after your <b>img</b> tag.
+</p>
+  <!DOCTYPE html>
+  <html>
+  	<head>
+  		<title></title>
+  	</head>
+  	<body>
+  		<p>
+  	   <a href="http://www.codecademy.com"> <img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/rotten_food.jpg" />Optional Text
+       </a>
+     </p>
+    </body>
+   </html>
+
+</body>
+</html>

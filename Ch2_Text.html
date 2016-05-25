@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter 3: Lists</title>
+</head>
+<body>
+
+  <h2>Chapter 2: Text</h2>
+
+  <p>
+    <b>Structural Markup:</b> the elements that you can use to describe both headings and paragraphs.
+
+    <b>Semantic Markup:</b> provides extra information; such as where emphasis is placed in a sentence, that something you havewritten is a quotation (and who said it), the meaning of acronyms, and so on.
+  </p>
+<hr />
+
+  <h2>Headings</h2>
+
+  <h1>This is a Main Heading</h1>                                                    <h2>This is a Level 2 Heading</h2>
+  <h3>This is a Level 3 Heading</h3>
+  <h4>This is a Level 4 Heading</h4>
+  <h5>This is a Level 5 Heading</h5>
+  <h6>This is a Level 6 Heading</h6>
+
+  <p>
+    HTML has six "levels" of headings. The <b>h1</b> element is used for main headings, <b>h2</b> is used for subheadings, etc. They vary in size with <b>h1</b> being the largest and <b>h6</b> the smallest. Size, text and fonts can be adjusted using CSS.
+  </p>
+  <hr />
+
+  <h2>Paragraphs</h2>
+
+  <p>
+    A paragraph consists of one or more sentences that form a self-contained unit of discourse. The start of a paragraph is indicated by a new line.
+  </p>
+
+  <p>
+    Text is easier to understand when it is split up into units of text. For example, a book may have chapters. Chapters can have subheadings. Under each heading there will be one or more paragraphs.
+  </p>
+
+  <p>
+    To create a paragraph, surroubd the words that make up the paragraph with an opening <b>p</b> tag and closes it with the closing <b>p</b> tag. By default browsers will show each paragraph on a new line with some space between it and any subsequent paragraphs
+  </p>
+<hr />
+
+  <h2>Bold and Italic</h2>
+
+  <p>
+    This is how we make a word appear <b>bold</b>.
+  </p>
+  <p>
+    Inside a product description you might see some <b>key features</b> in bold.
+  </p>
+
+  <p>
+    By enclosing words in the <b>b</b> tags we make the characters bold. It represents a section of text that would be presented in a visually diffrent way (key words of a paragraph). There is no additional implied meaning to the characters, besides to make them stand out.
+  </p>
+
+  <p>
+    This is how we make a word appear <i>italic</i>.
+  </p>
+  <p>
+    It's a potato <i>Solanum teberosum</i>.
+  </p>
+  <p>
+    Captain Cook sailed to Austrailia on the <i>Endeavour</i>.
+  </p>
+
+  <p>
+    By enclosing words in the <b>i</b> tag characters appear italic. The <b>i</b> element also represents a section of text that would be said in a different way from the surrounding content - such as technical terms, foreign words, thoughts, and names of ships.
+  </p>
+<hr />
+
+  <h2>Superscript & Subscript</h2>
+
+  <p>
+    On the 4<sup>th</sup> of September you will learn about E=MC<sup>2</sup>.
+  </p>
+
+  <p>
+    Raises and miniaturizes contents of <b>sup</b>.
+  </p>
+
+  <p>
+    The amount of CO<sub>2</sub> in the atmosphere grew by 2ppm in 2009<sub>1</sub>.
+  </p>
+
+  <p>
+    Lowers and miniaturizes contents of <b>sub</b>.
+  </p>
+<hr />
+
+  <h2>Whitespace</h2>
+
+  <p>
+    When a browser comes across two or more spaces next to each other, it only displays one space. If it comes across a line break, it treats it as a single space as well. This is called <b>white space collapsing</b>. Adding whitespace makes the code easier to follow.
+  </p>
+<hr />
+
+  <h2>Line Breaks & Horizontal Rules</h2>
+  <p>
+    The Earth<br />gets one hunder tons heavier every day<br />due to falling space dust.
+  </p>
+
+  <p>
+    Paragraphs and heading automatically appear on new lines. If you wanted to add a line break in the middle of a paragraph use the tag <b>br /</b>.
+  </p>
+
+  <p>
+    Venus is the only planet that rotates clockwise.
+  </p>
+  <hr /> <!--Creates a horizontal line-->
+  <p>
+    Jupiter is bigger than all the other plantes combined.
+  </p>
+
+  <p>
+    To create a break between themes - a change of topic or new scene in a play a horizontal rulecan be added between the sections using the <b>hr /</b> tag.</p>
+
+  <p>
+    There are a few elements that don't have any words between an opening and closing tag. They are known as <b>EMPTY ELEMENTS</b>. Usually only one tag, before the closing angled bracket there is a space and forward slash, as seen above.
+  </p>
+<hr />
+
+<h2>Semantic Markup</h2>
+
+  <p>
+    There are elements that are not intended to affect the structure of web pages, but they do add extra information to the pages - they are known as <b>semantic markup</b>.
+  </p>
+
+  <p>
+    Browsers often display the contents of these elements in different ways. They should not be used to change the way the text looks; their purpose is to describe the content of your web pages more accurately. They are used so other programs like screen readers or search engines can use the extra info.
+  </p>
+
+  <p>
+    The voice of a screen reader may add emphasis to words inside the <b>em</b> element or a search engine might register that the website features a quote if you use the <b>blockquote</b> element.
+  </p>
+<hr />
+
+  <h2>Strong & Emphasis</h2>
+
+  <p>
+    <strong>Beware:</strong> Pickpockets operate in this area.
+  </p>
+  <p>
+    This toy has many small pieces and is <strong>not suitable for children under five years old.</strong>
+  </p>
+
+  <p>
+    The <b>strong</b> element indicates that its content has strong importance. By default browsers show this element in bold.
+  </p>
+
+  <p>
+    I <em>think</em> Ivy was the first.
+  </p>
+  <p>
+    I think <em>Ivy</em> was the first.
+  </p>
+  <p>
+    I think Ivy was the <em>first</em>.
+  </p>
+
+  <p>
+    The <b>em</b> element indicates emphasis that subtly changes the meaning of a sentence. By default, this element will show contents in italic.
+  </p>
+<hr />
+
+  <h2>Quotations</h2>
+
+  <blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
+    <p>
+      Did you ever stop to think, and forget to start again?
+    </p>
+  </blockquote>
+
+  The <b>blockquote</b> element is used for longer quotes that take up an entire paragraph. The <b>p</b> element is still used inside the blockquote.
+  Browsers tend to indent the contents of a blockquote. Do not use this just to indent a piece of text - use CSS to achieve that effect.
+
+  <p>
+    As A.A. Milne said, <q>Some people talk to animals. Not many listen. That's the problem.</q>
+  </p>
+
+  <p>
+    The <b>q</b> element is used for shorter quotes that sit within a paragraph. Browsers are supposed to put quotes around the q element, IE does not - therfore many avoid using the q element.
+  </p>
+
+  <p>
+    Both elements can use the <b>cite</b> attribute to indicate where the quote is from. It's value should be a URL that will have more information about the source of the quotation.
+  </p>
+<hr />
+
+  <h2>Abbreviations & Acronyms</h2>
+
+  <p>
+    <abbr title="Professor">Prof</abbr> Stephen Hawking is a theoretical physicist and cosmologist.
+  </p>
+
+  <p>
+    If using an abbreviation or acronym the <b>abbr</b> element can be used. The <b>title</b> attribute in the opening tag is used to specify the full term.
+  </p>
+
+  <p>
+    <acronym title="National Aeronautics and Space Administration">NASA</acronym> do some crazy space stuff.
+  </p>
+
+  <p>
+    HTML 4 had a seperate acronym element. The <b>title</b> attribute was used to spell out the full form of the acronym. HTML 5 uses the <b>abbr</b> element for <b>both</b>.
+  </p>
+<hr />
+
+  <h2>Citation & Definitions</h2>
+
+  <p>
+    <cite>A Brief History of Time</cite> by Stephen Hawking has sold over ten million copies worldwide.
+  </p>
+
+  <p>
+    When referencing a piece of work (book,film,or reseach paper) the <b>cite</b> element can be used to indicate where the citation is from. It should not be used for a person's name, but it was allowed in HTML 4, so it's most likely to be used for that.
+    Browsers will render the contents in italics.
+  </p>
+
+  <p>
+    A <dfn>black hole</dfn> is a region of space from which nothing, not even light, can escape.
+  </p>
+
+  <p>
+    The first time you explain new terminology in a document, it's known as defining the instance of it. The <b>dfn</b> element is used to indicate the defining instance of the new term.</p>
+  <p>
+    Some browsers show the content in italics. Safari and Chrome do not chane the appearance.
+  </p>
+<hr />
+
+  <h2>Author Details</h2>
+
+  <address>
+    <p>
+      <a href="mailto:homer@example.org">homer@example.org</a>
+    </p>
+    <p>
+      742 Evergreen Terrace, Springfield.
+    </p>
+  </address>
+
+  <p>
+    The <b>address</b> element is used to contain the contact details for the author of the page. It can have the physical address, but doesn't have to. It can also have the phone number or email address.
+    Browsers often display the content in italics. There is also an hCard microformat for adding address information to your markup.
+  </p>
+<hr />
+
+  <h2>Changes to Content</h2>
+
+  <p>
+    It was the <del>worst</del> <ins>best</ins> idea she ever had.
+  </p>
+
+  <p>
+    The <b>del</b> element shows text that has been deleted from a document with a line through the text.
+    The <b>ins</b> element shows text that has been inserted to a document with an line under the text.
+  </p>
+
+  <p>
+    Laptop computer:
+  </p>
+  <p>
+    <s>Was $995</s>
+  </p>
+  <p>
+    Now only $375
+  </p>
+
+  <p>
+    The <b>s</b> element indicates something is no longer accurate or relevant, but should not be deleted.
+    Visually the content will have a line through the center.
+    Older versions of HTML had a <b>u</b> element, to underline, but that's being phased out.
+  </p>
+<hr />
+
+  <h2>Example HTML</h2>
+
+  <html>
+    <head>
+      <title>Text</title>
+    </head>
+    <body>
+      <h1>The Story in the Book</h1>
+      <h2>Chapter 1</h2>
+      <p>
+        Molly has been staring out her window for about an hour now. On her desk, kying between copies of <i>Nature</i>, <i>New Scientist</i>, and all the other scientific journals her work had appeared in, was a well thimbed copy of <cite>On The Road</cite>. It had been Molly's favorite book since college, and the longer she spent in these four walls the more she felt she needed to be free
+      </p>
+      <p>
+        She had spent the last ten years in this room, sitting under a poster with an Oscar Wilde quote proclaiming that <q>Work is the refuge of people who have nothing better to do.</q> Although man considered her work, unraveling the secrets of the llama <abbr title="Deoxyribonucleic acid">Dna</abbr>, to be an outstanding chievement, Molly <em>did</em> think she had something better to do.
+      </p>
+    </body>
+  </html>
+</body>
+</html>

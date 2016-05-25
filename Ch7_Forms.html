@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chapter 7: Forms</title>
+  </head>
+  <body>
+    <h2>Chapter 7: Forms</h2>
+    <p>
+      The term 'form' has referred to a printed document that contain spaces for you to fill in information.
+      HTML borrows the concept of a form to refer to different elements that allow you to collect information from visitors to your site.
+    </p>
+    <p>
+      HTML forms give you a set of elements to collect data from users. From a simple search box to complicated insurance applications.
+    </p>
+    <p>
+      In this chapter we cover:
+    </p>
+    <ul>
+      <li>
+        How to create a form on your website
+      </li>
+      <li>
+        The different tools for collecting data
+      </li>
+      <li>
+        New HTML 5 form controls
+      </li>
+    </ul>
+    <hr />
+    <h2>How forms work</h2>
+      <p>
+        A user fills in a form then presses a button to submit the information to the server. The name of each form control is sent to the server along with the value the user enters or selects.<br />
+        The server processes the information using a programming language, JavaScript for example. The server may also store the information on it's database.<br />
+        The server creates a new page to send back to the browser based on the information received.
+      </p>
+      <p>
+        A form can several controls, each gathering different information. The server needs to know which piece of inputted data corresponds with which form element.<br />
+        To differentiate the various pieces of inputted data, information is sent from the browser to the server using <b>name/value</b> pairs. You should <b>never</b> change the name of a form control in a page unless you know that the code on the server will understand this new value.
+      </p>
+    <hr />
+    <h2>Form Structure</h2>
+      <form action="http://www.example.com/subscribe.php" method="get">
+      <p>
+        This is where the form controls will appear.
+      </p><br />
+      </form>
+      <p>
+        Form controls live inside a <b>form</b> element.It should always have the <b>action attribute</b> and usually a <b>method</b> and <b>id</b> attribute
+      </p>
+      <p>
+        Every form requires the <b>action</b> attribute. The value is the URL for the page on the server that will receive the information in the form when it is submitted.
+      </p>
+      <p>
+        Forms can be submitted using one of two <b>methods: get</b> or <b>post</b>. With the <b>get</b> method, the values from the form are added to the end of the URL specified in the <b>action attribute</b>. This method is ideal for short forms, like search boxes or when you are just retrieving data from the web server (not sending info that should be added to or deleted from a database.)
+        </p>
+        <p>
+          With the <b>post</b> method the values are sent in what are known as <b>HTTP headers</b>. Generally you should use the <b>post</b> method if the form allows users to upload a file, is very log, contains sensetive data (passwords), and adds info to, or deletes info from, a database.<br />
+          If the <b>method</b> attribute is not used, the form data will be sent using the <b>get</b> method.
+        </p>
+        <p>
+          The value of <b>id</b> is used to identify the form distinctly from other elements on the page (and is often used by scripts - such as those that check you have entered information into fields that require values). We will look further into the <b>id</b> attribute in the next chapter.
+        </p>
+        <hr />
+    <h2>Form Controls</h2>
+      <h3>Text Input</h3>
+        <form action="http://www.example.com/login.php">
+          <p>
+            Username:
+            <input type="text" name="username" size="15" maxlength="30" />
+          </p>
+        </form>
+          <p>
+            The <b>input</b> element is used for several controls. The value of the <b>type</b> attribute determines what kind of input will be created. When the <b>type</b> attribute is <b>"text"</b>, it creates a single line text input.
+          </p>
+          <p>
+            When users enter information into a form, the server needs to know which <b>form control</b> each piece of data was entered into. (For example, in a login form, the server needs to know what has been entered as the username and what has been given as the password). Therefore, each form control requires a <b>name</b> attribute. The value of this attribute identifies the form control and is sent along with the information they enter to the server.
+          </p>
+          <p>
+            The <b>size</b> attribute <b>should not</b> be used on new forms. It was used in older forms to indicate the width of the input text (measured by the number of characters). The value of 3 would create a box wide enough for three characters (more characters could be entered). CSS should be used to control the width of form elements. The <b>size</b> attribute is mentioned because it is still out there in older code.
+          </p>
+          <p>
+            The <b>maxlength</b> attribute can be used to limit the number of character a user can enter. It's value is the number of characters that can be entered. If you were asking for a year, <b>maxlength</b> could have a value of four.
+          </p>
+          <hr />
+      <h3>Password Input</h3>
+        <form action="http://www.example.com/login.php">
+          <p>
+            Username:
+            <input type="text" name="username" size="15" maxlength="30"  />
+          </p>
+          <p>
+            Password:
+            <input type="password" name="password" size="15" maxlength="30"  />
+          </p>
+        </form>
+          <p>
+            This is another <b>input</b> element. When the <b>type</b> attribute has a value of <b>password</b> it creates a text box that acts just like a single-line text input, except the characters are blocked out. They are hidden so if some nosey creep wants to see your password, they can't see the sensetive data.
+          </p>
+          <p>
+            The <b>name</b> attribute indicates the name of the password input, which is sent to the server with the password the user enters.
+          </p>
+          <p>
+            This input can also carry <b>size</b> and <b>maxlength</b> attributes like the single-line input.
+          </p>
+          <p>
+            The password is only <b>visually</b> hidden, this doesn't mean tha the data in the password controlis sent securely to the server. <b>Never</b> use these for sending sensetive data like credit card numbers. For full security, the server nneds to be set uo to communicate with browsers using <b>Secure Sockets Layer (SSL)</b>. SSL is beyond the scope of this book, there are links available on the accompanying website to learn more about this topic.
+          </p>
+          <hr />
+      <h3>Text Area</h3>
+        <form action="http://www.example.com/comments.php">
+          <p>
+            What did you think of this gig?
+          </p>
+          <textarea name="comments" cols="20" rows="4">Enter your comments...</textarea>
+        </form>
+          <p>
+            The <b>textarea</b> element is used to create multi-line text input. This is not an empty element, it <b>should</b> have an opening and closing tag.
+          </p>
+          <p>
+            Any text between the opening and closing tags will appear in the text box when the page loads. If the user doesn't delete any text between these tags, this message will be sent to the server along with whateverthe user typed. (Some sites use JavaScript to clear this information when the user clicks in the text area.)
+          </p>
+          <p>
+            When creating a new form use CSS to control the height and width of <b>textarea</b>. Older code will have the <b>cols</b> and <b>rows</b> attributes used with this element. Cols controls how wide and rows controls high the text area should be.
+          </p>
+          <hr />
+      <h3>Radio Button</h3>
+        <form action="http://www.example.com/profile.php">
+          <p>
+            Please selcet your favorite genre:
+            <br />
+            <input type="radio" name="genre" value="rock" checked="checked" /> Rock
+            <input type="radio" name="genre" value="pop" />
+            Pop
+            <input type="radio" name="genre" value="jazz" />
+            Jazz
+          </p>
+        </form>
+          <p>
+            This is another <b>input</b> element. When the <b>type</b> attribute is <b>radio</b>, radio buttons allow the user to pick just one of a number of options.
+          </p>
+          <p>
+            The <b>name</b> attribute is sent to the server with the value of the option the user selects. When a question provides users with answers in the form of radio buttons, the <b>value</b> of the <b>name</b> attributes should all be the <b>same</b> for all the radio buttons used to answer that question.
+          </p>
+          <p>
+            The <b>value</b> attribute indicates the value that is sent to the server for the selected option. The value of each of the buttons in a group should be diffrent (so the server knows which option the user selected).
+          </p>
+          <p>
+            The <b>checked</b> attribute can be used to indicate which value (if any) should be selected when the page loads. The value of this attribute is <b>checked</b>. Only <b>one radio button</b> in a group should use this attribute.
+          </p>
+          <p>
+            Once a radio button is selected it can't be deselected, the user can only select a different option. If you are only allowing the user one option and want them to be able to deselect it (like agreeing to terms and conditions) you should ued a checkbox instead.
+          </p>
+          <hr />
+      <h3>Checkbox</h3>
+        <form action="http://www.example.com/profile.php">
+          <p>
+            Please select your favorite music service(s):
+            <br />
+            <input type="checkbox" name="services" value="itunes" checked="checked" /> iTunes
+            <input type="checkbox" name="services" value="lastfm" /> Last.fm
+            <input type="checkbox" name="services" value="spotify" /> Spotify
+          </p>
+        </form>
+          <p>
+            This is another <b>input</b> element! When the <b>type</b> attribute is <b>checkbox</b>, checkbox allows users to select and deselect one or more options in answer to a question.
+          </p>
+          <p>
+            The <b>name</b> attribute is sent to the server with the value of the option(s) the user selects. When a question provides users with optoins for answers in the form of checkboxes, the <b>value</b> of the <b>name</b> attribute should be the same for all the buttons that answer that question.
+          </p>
+          <p>
+            The <b>value</b> attribute indicates the value sent to the server if this box is checked. The <b>checked</b> attribute indicates that this box should be checked when the page loads. If used, the value should be checked.
+          </p>
+          <hr />
+      <h3>Drop Down List Box</h3>
+        <form action="http://www.example.com/profile.php">
+          <p>
+            What device do you listen to music on?
+          </p>
+          <select name="devices">
+            <option value="ipod">
+              iPod
+            </option>
+            <option value="radio" selected>
+              Radio
+            </option>
+            <option value="computer">
+              Computer
+            </option>
+          </select>
+        </form>
+          <p>
+            The drop down list box, also known as a <b>select box</b> allows users to select one option from a drop down list. The <b>select </b> element is used to create the drop down list box. It contain two or more <b>option</b> elements
+          </p>
+          <p>
+            The <b>name</b> attribute indicates the name of the form control being sent to the server, along with the value selected.
+          </p>
+          <p>
+            The <b>option</b> element is used to specify the options the user can select from. The words between the opening and closing tags will be showwn to the user in the drop down box.
+          </p>
+          <p>
+            The <b>option</b> element uses the <b>value</b> attribute to indicate the value that is sent to the server, along with the name of the control if this option is selected.
+          </p>
+          <p>
+            The <b>selected</b> attribute can be used to indicate the option that should be selected when the page loads. This would come in to play if you, the author of the web page, had a preference of what the user should select. The value should always be <b>selected</b>, but as seen in the code, it's simply the text, <b>selected</b> after the value of option. <!--HTML5 format-->
+          </p>
+          <p>
+            If this attribute is <b>not used</b>, the first option will be shown when the page loads. If the user doesn't select an option, the first item will be sent to the server as the value for this control
+          </p>
+          <p>
+            The function of a drop down box is similar to the radio buttons (only one optoin can be selected). The two key factors in choosing which to use are:
+          </p>
+          <ol>
+            <li>
+              If users need to see all options at a glance, radio buttons are better suited
+            </li>
+            <li>
+              If ther is a very long list of options (such as a list of countries), drop down list boxes work better.
+            </li>
+          </ol>
+          <hr />
+      <h3>Multiple Select Box</h3>
+        <form action="http://www.example.com/profile.php">
+          <p>
+            Do you play any of the following instruments?<br />
+            (You can select more than one by holding down control on a PC or command key on a Mac while selecting different options.)
+          </p>
+          <select name="instruments" size="3" multiple="multiple">
+            <option value="guitar" selected>
+              Guitar
+            </option>
+            <option value="drums">
+              Drums
+            </option>
+            <option value="keyboard" selected>
+              Keyboard
+            </option>
+            <option vale="bass">
+              Bass
+            </option>
+          </select>
+        </form>
+          <p>
+            You can turn a drop down select box into a box that shows more than one option by adding the <b>size</b> attribute. Its value should be the number of options you want to show at once. In the example, three of the four options are shown.
+          </p>
+          <p>
+            The way browsers have implemented this attribute is not perfect, and it should be tested throughly if used (Firefox and Safari on Mac, in particular).
+          </p>
+          <p>
+            By adding the <b>multiple</b> attribute, with a value of <b>multiple</b>, you can allow users to select multiple options from this list.
+          </p>
+          <p>
+            Its a good ides to tell users if they can select more than one optoin at a time. Also, indicate that on a PC they sholud hold down the <b>contral</b> key while selecting multiple options and on a Mac they should use the command key while selecting options.
+          </p>
+          <hr />
+      <h3>File Input Box</h3>
+        <form action="http://www.example.com/upload.php" method="post">
+          <p>
+            Upload your song in MP3 format:
+          </p>
+          <input type="file" name="user-song"  /><br />
+          <input type="submit" value="Upload" />
+        </form>
+          <p>
+            This is another <b>input</b> element! If you want users to upload a file(image, video, mp3, or a PDF) you will need to use a file input box.
+          </p>
+          <p>
+            This type of input creates a box that looks like a text input followed by a <b>Browse</b> button. (Safari on Mac and Chrome display a button labelled <b>Choose File</b> followed by the text "no file selected" or the name of the file choosen by the user.) When the user clicks on the <b>Browse</b> button, a window open up that allows them so select a file from their computer to upload to the website.
+          </p>
+          <p>
+            The <b>method</b> attribute on the <b>form</b> element must have the value <b>post</b>, to allow users to upload files. (You can't send files using the HTTP get method.)
+          </p>
+          <p>
+            When a user clicks the <b>Browse</b> button, the presentation of the window that allows users to browse for the file they want to upload will match the user's OS. The appearance of these windows cannot be controlled.
+          </p>
+          <hr />
+      <h3>Submit Button</h3>
+        <form action="http://www.example.com/subscribe.php">
+          <p>
+            Subscribe to our email list:
+          </p>
+          <input type="text" name="email" />
+          <input type="submit" name="subscribe" value="Subscribe" />
+        </form>
+          <p>
+            This is another <b>input</b> element!! When the <b>type</b> attribute is <b>submit</b>, a submit button is created. This button is used to send a form to the server. It can use a <b>name</b> attribute, but doesn't need to have one.
+          </p>
+          <p>
+            The <b>value</b> attirbute is used to control the text that appears on a button. It is a good idea to specify the words you want to appear on a button because the default on some browsers is 'Submit Query', this might not be appropiate for all kinds of forms.
+          </p>
+          <p>
+            Different browsers will show buttons in different ways and tend to fit the visual presentation of the browser. To control the appearance of a submit button, use CSS or you can use an image for the button.
+          </p>
+          <hr />
+      <h3>Image Button</h3>
+        <form action="http://www.example.com/subscribe.php">
+          <p>
+            Subscribe to our email list:
+            <input type="text" name="email" />
+            <input type="image" src="/Users/Kenzo/Documents/HTML:CSS Book/Images/subscribe_button.jpg" width="100" height="20" />
+          </p>
+        </form>
+          <hr />
+
+          <p>
+            This is another <b>input</b> element. If you want to use an image for the submit button, you can give the <b>type</b> attribute a value of image. The <b>src, width, height, and alt</b> attributes work just like they do when used with the <b>img</b> element.
+          </p>
+          <hr />
+      <h3>Button & Hidden Controls</h3>
+        <form action="http://www.example.com/add.php">
+          <button><img src="/Users/Kenzo/Documents/HTML:CSS Book/Images/green_plus.jpg" alt="add" width="10" height="10" />Add</button>
+          <input type="hidden" name="bookmark" value="lyrics" />
+        </form>
+          <p>
+            The <b>button</b> element was introduced to allow users more control over how their buttons appear, and to allow other elements to appear inside the button
+          </p>
+          <p>
+            This means you can combine text and images between the opening and closing tags.
+          </p>
+          <p>
+            Another <b>input</b> element! The example shows a <b>hidden</b> form control. These form controls are not shown on the page (although you can see them if you use the <b>View Source</b> option in the browser.) They allow web page authors to add values to forms that users cannot see. For example, a web page author might use a hidden field to indicate which page the user was on when they submitted a form.
+          </p>
+          <hr />
+      <h3>Labelling Form Controls</h3>
+        <label>Age: <input type="text" name="age" /></label>
+        <br />
+        Gender:
+        <input id="female" type="radio" name="gender" value="f" />
+        <label for="female">Female</label>
+        <input id="male" type="radio" name="gender" value="m" />
+        <label for="male">Male</label>
+          <p>
+            When introducing form controls, the code was kept simple by indicating the purpose of each one in text next to it. However, each form control should have it's own <b>label</b> element as this makes the form accessible to vision-impaired users.
+          </p>
+          <p>
+            The <b>label</b> element can be used in two ways. It can:
+              <ol>
+                <li>
+                  Wrap around both the text description and the form input (as shown on the first line of the example above).
+                </li>
+                <li>
+                  Be kept seperate from the form control and use the <b>for </b> attribute to indicate which form control it is a label for (as shown with the radio buttons).
+                </li>
+              </ol>
+          </p>
+          <p>
+            The <b>for</b> attribute states which form control the label belongs to. Note how the radio buttons use the <b>id</b> attribute. The value of the <b>id</b> attribute uniquely identifies anelement from all other elements on the page. This will be covered in the next chapter.
+          </p>
+          <p>
+            The value of the <b>for</b> attribute matches that of the <b>id</b> attribute on the form control it is labeling. This <b>technique</b> using the <b>for</b> and <b>id</b> attributes can be used on any form control. When a <b>label</b> element is used with a checkbox or radio button, users can click on either the form control or the label to select. The expanded clichable are makes the form easier to use, improving <b>UI</b>. The position of the label is very important. If users don't know where to enter information or what information to enter, they are less likely to use the form correctly.
+          </p>
+          <p>
+            As a rule of thumb, these are the best places to place labels on form controls.<br />
+            Above or to the left:
+              <ul>
+                <li>
+                  Text Inputs
+                  <h5>Left</h5>
+                  <p>
+                    <label>Example: <input type="text" name="example" /></label>
+                  </p>
+                  <h5>Above</h5>
+                  <p>
+                    <label>Example: </label><br />
+                    <input type="text" name="example" />
+                  </p>
+                </li>
+                <li>
+                  Text Areas
+                  <h5>Left</h5>
+                  <p>
+                    <label>Example: </label><textarea name="example" cols="10" rows="2">Great Example!</textarea>
+                  </p>
+                  <h5>Above</h5>
+                  <p>
+                    <label>Example: </label><br />
+                    <textarea name="example" cols="10" rows="2">Great Example!</textarea>
+                  </p>
+                </li>
+                <li>
+                  Select Boxes
+                  <h5>Left</h5>
+                  <p>
+                    <label>Example: <select name="instruments" size="3" multiple="multiple">
+                      <option value="guitar" selected>
+                        Guitar
+                      </option>
+                      <option value="drums">
+                        Drums
+                      </option>
+                      <option value="keyboard" selected>
+                        Keyboard
+                      </option>
+                      <option vale="bass">
+                        Bass
+                      </option>
+                      </select>
+                    </label>
+                  </p>
+                  <h5>Above</h5>
+                  <p>
+                    <label>Example: <br />
+                      <select name="instruments" size="3" multiple="multiple">
+                        <option value="guitar" selected>
+                          Guitar
+                        </option>
+                        <option value="drums">
+                          Drums
+                        </option>
+                        <option value="keyboard" selected>
+                          Keyboard
+                        </option>
+                        <option vale="bass">
+                          Bass
+                        </option>
+                        </select>
+                      </label>
+                  </p>
+                </li>
+                <li>
+                  File Uploads
+                  <h5>Left</h5>
+                  <label>Example: </label>
+                  <input type="file" name="user-song"  /><br />
+                  <input type="submit" value="Upload" />
+                  <h5>Above</h5>
+                  <label>Example: </label><br />
+                  <input type="file" name="user-song"  /><br />
+                  <input type="submit" value="Upload" />
+                </li>
+              </ul><br />
+            To the right:
+              <ul>
+                <li>
+                  Individual Checkboxes
+                  <h5>Right (preferred)</h5>
+                  <input type="checkbox" name="example_1" value="check_here" checked=
+                  "checked"/> Check Here
+                  <h5>Left (not preferred)</h5>
+                  Check Here <input type="checkbox" name="example_2" value="check_here" checked="checked" />
+                </li>
+                <br />
+                <li>
+                  Individual Radio Buttons
+                  <h5>Right (preferred)</h5>
+                  <input type="radio" name="example_3" value="check_here" checked="checked" /> Check Here
+                  <h5>Left (not preferred)</h5>
+                  Check Here <input type="radio" name="example_4" value="check_here" checked="checked"/>
+                </li>
+              </ul>
+          </p>
+          <hr />
+      <h3>Grouping Form Elements</h3>
+        <fieldset>
+          <legend>
+            Contact Details
+          </legend>
+          <label>Email:<br />
+          <input type="text" name="email"  /></label><br />
+          <label>Mobile:<br />
+          <input type="text" name="mobile" /></label><br />
+          <label>Telephone<br />
+          <input type="text" name="telephone" /></label>
+        </fieldset>
+        <p>
+          You can group related form controls together inside the <b>fieldset</b> element. This is helpful for longer forms.
+        </p>
+        <p>
+          Most browsers will show the <b>fieldset</b> with a line around the edge to show how they are related. The appearance of these lines can be agjusted using CSS.
+        </p>
+        <p>
+          The <b>legend</b> element can come directly after the opening <b>fieldset</b> tag and contains a caption which helps identify the purpose of that group of form controls.
+        </p>
+        <hr />
+      <h3>HTML 5: Form Validation</h3>
+        <form action="http://www.example.com/login/" method="post">
+          <label name="username">Username:</label>
+            <input type="text" name="username" required="required" /><br />
+          <label name="password">Password:</label>
+            <input type="password" name="password" required="required" />
+            <input type="submit" value="submit" />
+        </form>
+        <p>
+          There are forms on the web that give messages if the form control has not been filled out correctly, this is known as <b>form validation</b>.
+        </p>
+        <p>
+          Traditionally, form validation has been performed using JavaScript (which will not be covered here). HTML 5 is introducing validation and leaving the work to the browser.
+        </p>
+        <p>
+          Vaildation helps ensure the user enters information in a form that the server will be able to understand when th form is submitted. Validating the contents of the form before it is sent to the server helps:
+            <ul>
+              <li>
+                Reduce the amount of work the server has to do.
+              </li>
+              <li>
+                Enable users to see if there are problems with the form (faster than if validation were performed on the server).
+              </li>
+            </ul>
+        </p>
+        <p>
+          At the time of printing, only Chrome and Opera supported HTML5 validation, other are expected to follow. To support older browsers web page authors are likely to continue using JavaScript to validate forms.
+        </p>
+        <p>
+          An example of HTML5 form validation is the <b>required</b> attribute, which can be used on any form element that the user is expected to fill in. This HTML5 attribute <b>does not</b> need a value, but in all HTML4 all attributes must have a value. So, some people give this attribute a value of <b>required</b>.
+        </p>
+        <hr />
+        <h3>HTML5: Date Input</h3>
+          <form action="http://www.example.com/bookings/" method="post">
+            <label for="depart">Departure date:</label>
+            <input type="date" name="depart" />
+            <input type="submit" value="submit" />
+          </form>
+          <p>
+            Many forms need to gather information such as dates, email addresses, and URLs. This has traditioanlly been done using text inputs.
+          </p>
+          <p>
+            HTML5 introduces new form controls to standardize the way that some information is gathered. Older browsers that do not recognize these inputs will just treat them as a single line input text box.
+          </p>
+          <p>
+            If you are asking the user for a date, you can use an <b>input</b> element and give the <b>type</b> attribute a value of date. This wil create a date input in browsers that support the new HTML5 input types.
+          </p>
+          <p>
+            This example shows what the date input looks like in the Opera browser(see book for example). The appearance of the date input changes across browsers.
+          </p>
+          <hr />
+      <h3>HTML5: Search Input</h3>
+        <form action="http://www.example.org/search.php">
+          <p>
+            Search
+          </p>
+          <input type="search" name="search" />
+          <input type="submit" value="Search" />
+        </form>
+        <p>
+          This is another <b>input</b> element!. If you want to create a single line text box for search queries, HTML5 a special type of input for this.
+        </p>
+        <p>
+          To create the HTML5 search box the <b>input</b> element should have a <b>type</b> attribute whose value is <b>search</b>. Older browsers will simply treat it like a single line text box.
+        </p>
+        <p>
+          Recent browsers have added some features that improve usability. Safari on a Mac adds a croaa to clear the search box when you have started to enter information. Safari also automatically rounds the corners on the search input field.
+        </p>
+        <form action="http://www.example.org/search.php">
+          <p>
+            Search:
+          </p>
+          <input type="search" name="search" placeholder="Enter Keyword" />
+          <input type="submit" value="Search" />
+        </form>
+        <p>
+          On any text input, you can also use an attribute called <b>placeholder</b> whose value is text that will be shown in the text box until the user clicks in that area. Older browsers simply ignore this attribute.
+        </p>
+        <hr />
+        <h3>Example Forrms</h3>
+        <html>
+          <head>
+            <title>Forms</title>
+          </head>
+          <body>
+            <form action="http://www.example.com/review.php" method="get">
+              <fieldset>
+                <legend>
+                  Your Details:
+                </legend>
+                <label>Name:
+                <input type="text" name="name" size="30" maxlength="100" /></label>
+                <br />
+                <label>Email:
+                <input type="email" name="email" size="30" maxlength="100" /></label>
+                <br />
+              </fieldset>
+              <br />
+              <fieldset>
+                <legend>
+                  Your Review:
+                </legend>
+                <p>
+                  <label for="hear-about">How did you hear about us?</label>
+                  <select name="referrer" id="hear-about">
+                    <option value="google">
+                      Google
+                    </option>
+                    <option value="friend">
+                      Friend
+                    </option>
+                    <option value="advert">
+                      Advert
+                    </option>
+                    <option value="other">
+                      Other
+                    </option>
+                  </select>
+                </p>
+                <p>
+                  Would you visit again?
+                <br />
+                  <label>
+                  <input type="radio" name="rating" value="yes" />
+                  Yes
+                  </label>
+                  <label>
+                  <input type="radio" name="rating" value="no" />
+                  No
+                  </label>
+                  <label>
+                  <input type="radio" name="rating" value="maybe" />
+                  Maybe
+                  </label>
+                </p>
+                <p>
+                  <label for="comments">
+                    Comments:
+                  </label>
+                  <br />
+                  <textarea rows="4" cols="40" id="comments"></textarea>
+                </p>
+                <label>
+                  <input type="checkbox" name="subscribe" checked="checked" />
+                  Sign me up for email updates
+                </label>
+                <br />
+                <input type="submit" value="Submit review" />
+              </fieldset>
+            </form>
+          </body>
+        </html>
+      <h3>Summary</h3>
+      <ul>
+        <li>
+          Whenever you want to collect information from visitors you will need a form, which lives inside a <b>form</b> element.
+        </li>
+        <li>
+          Information from a form is sent in <b>name/value</b> pairs.
+        </li>
+        <li>
+          Each for is given a <b>name</b>, and the text the user types in or the <b>values</b> of the options they select are sent to the server.
+        </li>
+        <li>
+          HTML5 introduces new form elements which make it easier for visitors to fill in forms.
+        </li>
+      </ul>
+  </body>
+</html>
